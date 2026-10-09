@@ -1,6 +1,13 @@
 {
+  "name": "employeehub",
+  "version": "1.0.0",
+  "description": "Employee Management System",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
   "dependencies": {
-    "ejs": "^6.0.1",
-    "express": "^5.2.1"
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
   }
 }
