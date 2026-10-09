@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <div class="welcome-badge">
+                    <span></span>Employee Management System
+                </div>
+                <h1>Manage your<br><strong>team smarter.</strong></h1>
+                <p class="hero-description">A simple and powerful way to manage employee information, track your team and keep everything organized in one place.</p>
+                <div class="hero-buttons">
+                    <button class="primary-btn" id="homeAddEmpBTN">
+                        <span><i class="fa-solid fa-plus"></i></span>
+                        Add Employee
+                    </button>
+                    <a href="/employees" class="outline-btn">
+                        <span><i class="fa-solid fa-arrow-right-long"></i></span>
+                        View Employee
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="mini-stat">
+                        <strong>124</strong>
+                        <span>Total Employees</span>
+                    </div>
+                    <div class="stat-line"></div>
+                    <div class="mini-stat">
+                        <strong>118</strong>
+                        <span>Active Employees</span>
+                    </div>
+                    <div class="stat-line"></div>
+                    <div class="mini-stat">
+                        <strong>08</strong>
+                        <span>Departments</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-background"></div>
+                <div class="employee-card-main">
+                    <div class="employee-card-top">
+                        <div>
+                            <p>Employee Overview</p>
+                            <h3>Team Members</h3>
+                        </div>
+                        <div class="three-dots"><i class="fa-solid fa-ellipsis"></i></div>
+                    </div>
+                    <div class="employee-count">
+                        <strong>124</strong>
+                        <span>employees</span>
+                    </div>
+                    <div class="progress-container">
+                        <div class="progress-label">
+                            <span>Team capacity</span>
+                            <strong>82%</strong>
+                        </div>
+                        <div class="progress-bar">
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="team-members">
+                        <div class="member">
+                            <div class="member-avatar avatar-one">AS</div>
+                            <div>
+                                <strong>Arjun Sharma</strong>
+                                <span>Developer</span>
+                            </div>
+                            <i></i>
+                        </div>
+                        <div class="member">
+                            <div class="member-avatar avatar-two">RV</div>
+                            <div>
+                                <strong>Rahul Verma</strong>
+                                <span>Designer</span>
+                            </div>
+                            <i></i>
+                        </div>
+                        <div class="member">
+                            <div class="member-avatar avatar-three">PM</div>
+                            <div>
+                                <strong>Priya Singh</strong>
+                                <span>Manager</span>
+                            </div>
+                            <i></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="floating-card">
+                    <div class="floating-icon"><i class="fa-solid fa-check"></i></div>
+                    <div>
+                        <strong>Team updated</strong>
+                        <span>Just now</span>
+                    </div>
+                </div>
+                <div class="decorative-circle"></div>
+            </div>
+        </section>
+        <section class="features-section">
+            <div class="section-heading">
+                <div>
+                    <span>WHY EMPLOYEEHUB</span>
+                    <h2>Everything you need to <strong>manage your team.</strong></h2>
+                </div>
+                <p>Keep your employee information organized, accessible and easy to manage.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon purple"><i class="fa-solid fa-users"></i></div>
+                    <h3>Employee Management</h3>
+                    <p>Add, update and manage employee information from one central place.</p>
+                    <a href="/employees">Manage employees<i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon blue"><i class="fa-solid fa-chart-column"></i></div>
+                    <h3>Simple Dashboard</h3>
+                    <p>Get a quick overview of your employees, departments and team activity.</p>
+                    <a href="/dashboard">View dashboard<i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon green"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Organized & Secure</h3>
+                    <p>Keep important employee information organized and easily accessible.</p>
+                    <a href="/about">Learn more<i class="fa-solid fa-arrow-right-long"></i></a>
+                </div>
+            </div>
+        </section>
+        <section class="bottom-cta">
+            <div>
+                <span>READY TO GET STARTED? </span>
+                <h2>Build a better way to <strong>manage your team.</strong></h2>
+            </div>
+            <button class="primary-btn1" id="homeAddEmpBTN1">
+                <i class="fa-solid fa-plus"></i>
+                Add Your First Employee
+            </button>
+        </section>
+    </main>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/home.js"></script>
+</body>
+</html>

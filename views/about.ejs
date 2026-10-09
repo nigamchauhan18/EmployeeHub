@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/footer.css">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="about-page">
+        <section class="about-hero">
+            <div class="about-hero-content">
+                <div class="about-badge">
+                    <span class="badge-dot"></span>ABOUT EMPLOYEEHUB
+                </div>
+                <h1>Simplifying the way <span>you manage your team.</span>
+                </h1>
+                <p>EmployeeHub is a modern employee management platform designed to help organizations organize employee information, monitor workforce activity and manage essential employee data from one place.</p>
+                <div class="hero-actions">
+                    <a href="/employees" class="primary-btn">
+                        <i class="fa-solid fa-users"></i> Explore Employees
+                    </a>
+                    <a href="/dashboard" class="secondary-btn">
+                        View Dashboard<i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="about-hero-visual">
+                <div class="visual-card">
+                    <div class="visual-card-header">
+                        <div>
+                            <span>WORKFORCE OVERVIEW</span><h3>EmployeeHub</h3>
+                        </div>
+                        <div class="visual-status">
+                            <span></span>Live
+                        </div>
+                    </div>
+                    <div class="visual-stats">
+                        <div class="visual-stat">
+                            <div class="visual-stat-icon purple">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <strong id="heroTotalEmployees">0</strong>
+                                <span>Employees</span>
+                            </div>
+                        </div>
+                        <div class="visual-stat">
+                            <div class="visual-stat-icon green">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div>
+                                <strong id="heroActiveEmployees">0</strong>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                        <div class="visual-stat">
+                            <div class="visual-stat-icon blue">
+                                <i class="fa-solid fa-building"></i>
+                            </div>
+                            <div>
+                                <strong id="heroDepartments">0</strong>
+                                <span>Departments</span>
+                            </div>
+                        </div>
+                        <div class="visual-stat">
+                            <div class="visual-stat-icon orange">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </div>
+                            <div>
+                                <strong id="heroPayroll">₹0</strong>
+                                <span>Monthly Payroll</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="visual-progress">
+                        <div class="progress-header">
+                            <span>Workforce Status</span>
+                            <strong id="heroPercentage">0%</strong>
+                        </div>
+                        <div class="progress-track">
+                            <div class="progress-fill" id="heroProgress"></div>
+                        </div>
+                        <span class="progress-text">Active employees currently working</span>
+                    </div>
+                </div>
+                <div class="floating-card floating-card-one">
+                    <div class="floating-icon purple">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <strong>Easy Management</strong>
+                        <span>Manage employees faster</span>
+                    </div>
+                </div>
+                <div class="floating-card floating-card-two">
+                    <div class="floating-icon green">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <strong>Smart Insights</strong>
+                        <span>Track workforce data</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-intro">
+            <div class="section-heading">
+                <span class="section-label">WHO WE ARE</span>
+                <h2>Built to make employee management <span>simple and organized.</span></h2>
+            </div>
+            <div class="intro-content">
+                <div class="intro-text">
+                    <p>EmployeeHub is an employee management solution created to simplify the everyday process of managing workforce information.</p>
+                    <p>Instead of keeping employee information scattered across spreadsheets, documents and different systems, EmployeeHub brings important workforce information together in one centralized platform.</p>
+                    <p>From employee profiles and departments to salary, joining dates and employment status, EmployeeHub provides a clear and organized way to manage employee records.</p>
+                </div>
+                <div class="intro-highlight">
+                    <div class="highlight-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <strong>Our Goal</strong>
+                        <p>Make workforce management easier, faster and more accessible for organizations of every size.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-stats">
+            <div class="stat-box">
+                <div class="stat-box-icon purple">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <strong id="statEmployees">0</strong>
+                <span>Employees Managed</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon blue">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <strong id="statDepartments">0</strong>
+                <span>Departments</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon green">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <strong id="statActive">0%</strong>
+                <span>Active Workforce</span>
+            </div>
+            <div class="stat-box">
+                <div class="stat-box-icon orange">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <strong>24/7</strong>
+                <span>Data Accessibility</span>
+            </div>
+        </section>
+        <section class="features-section">
+            <div class="section-heading centered">
+                <span class="section-label">WHAT WE OFFER</span>
+                <h2>Everything you need to manage <span>your workforce.</span></h2>
+                <p>EmployeeHub provides simple tools that help keep your employee information organized and accessible.</p>
+            </div>
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <h3>Employee Management</h3>
+                    <p>Add, view, update and manage employee profiles from a centralized workforce directory.</p>
+                    <a href="/employees">
+                        Manage Employees <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon blue">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3>Smart Dashboard</h3>
+                    <p>Get a quick overview of employee counts, departments, workforce status and payroll.</p>
+                    <a href="/dashboard">
+                        Open Dashboard<i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon green">
+                        <i class="fa-solid fa-filter"></i>
+                    </div>
+                    <h3>Powerful Search & Filters</h3>
+                    <p>Quickly find employees using search, department, status, salary and sorting options.</p>
+                    <a href="/employees">
+                        Browse Directory <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon orange">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                    </div>
+                    <h3>Payroll Overview</h3>
+                    <p>Keep track of monthly workforce payroll and understand salary distribution at a glance.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon cyan">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Department Organization</h3>
+                    <p>Organize employees by departments and understand how your workforce is distributed.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon pink">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                    </div>
+                    <h3>Responsive Experience</h3>
+                    <p>Access important workforce information through a clean interface designed for different screen sizes.</p>
+                </article>
+            </div>
+        </section>
+        <section class="how-section">
+            <div class="section-heading">
+                <span class="section-label">HOW IT WORKS</span>
+                <h2>Manage your workforce <span>in three simple steps.</span></h2>
+            </div>
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <h3>Add Employees</h3>
+                    <p>Create employee profiles with their personal, professional and employment information.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+                    <h3>Organize Information</h3>
+                    <p>Keep employees organized by department, position, salary and employment status.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <div class="step-icon">
+                        <i class="fa-solid fa-chart-line"></i>
+                    </div>
+                    <h3>Track & Manage</h3>
+                    <p>Use the dashboard and employee directory to monitor your workforce and make better decisions.</p>
+                </div>
+            </div>
+        </section>
+        <section class="benefits-section">
+            <div class="benefits-visual">
+                <div class="benefits-card">
+                    <div class="benefits-card-top">
+                        <div>
+                            <span>EMPLOYEEHUB</span>
+                            <h3>One place for your workforce</h3>
+                        </div>
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="benefit-line">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Centralized employee information</span>
+                    </div>
+                    <div class="benefit-line">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Easy employee search</span>
+                    </div>
+                    <div class="benefit-line">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Department organization</span>
+                    </div>
+                    <div class="benefit-line">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Workforce statistics</span>
+                    </div>
+                    <div class="benefit-line">
+                        <i class="fa-solid fa-check"></i>
+                        <span>Payroll overview</span>
+                    </div>
+                </div>
+            </div>
+            <div class="benefits-content">
+                <span class="section-label">WHY EMPLOYEEHUB</span>
+                <h2>Less complexity. <span>More control.</span></h2>
+                <p>EmployeeHub is designed around one simple idea: employee management should not feel complicated.</p>
+                <div class="benefit-list">
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <strong>Centralized Information</strong>
+                            <span>Keep important employee details in one organized place.</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <strong>Faster Workflows</strong>
+                            <span>Reduce repetitive work and quickly find the information you need.</span>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-check">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <div>
+                            <strong>Clear Workforce Insights</strong>
+                            <span>Understand your workforce through simple statistics and reports.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="about-cta">
+            <div class="cta-icon">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div class="cta-content">
+                <span>READY TO GET STARTED?</span>
+                <h2>Start managing your workforce smarter.</h2>
+                <p>Explore your employee directory and see how EmployeeHub can simplify workforce management.</p>
+            </div>
+            <a href="/employees" class="cta-btn">
+                Get Started <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </section>
+    </main>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/about.js"></script>
+</body>
+</html>

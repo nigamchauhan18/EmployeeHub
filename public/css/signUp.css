@@ -1,0 +1,538 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: rgb(247, 248, 252);
+    color: rgb(30, 41, 59);
+}
+
+.signup-page {
+    padding: 30px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.signup-wrapper {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0 25px 70px rgba(30, 41, 59, 0.10);
+    border: 1px solid rgb(232, 234, 240);
+    border-radius: 22px;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 46% 54%;
+    width: 1050px;
+    min-height: 650px;
+}
+
+.signup-brand {
+    background: linear-gradient(145deg, rgb(49, 46, 129), rgb(79, 70, 229) 55%, rgb(67, 56, 202));
+    color: rgb(255, 255, 255);
+    padding: 55px 45px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* .signup-brand::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.11;
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.5) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
+    background-size: 35px 35px;
+    mask-image: linear-gradient(to bottom, black,transparent 90%);
+} */
+
+.brand-glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
+.glow-one {
+    background-color: rgba(129, 140, 248, 0.30);
+    width: 250px;
+    height: 250px;
+    top: -100px;
+    right: -80px;
+}
+
+.glow-two {
+    background-color: rgba(6, 182, 212, 0.18);
+    width: 200px;
+    height: 200px;
+    bottom: -90px;
+    left: -80px;
+}
+
+.brand-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+}
+
+.brand-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    color: rgb(199, 210, 254);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.brand-label span {
+    background-color: rgb(129, 140, 248);
+    width: 20px;
+    height: 2px;
+    border-radius: 2px;
+}
+
+.brand-content h1 {
+    color: rgb(255, 255, 255);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 18px;
+    line-height: 1.18;
+    letter-spacing: -1.3px;
+    max-width: 380px;
+}
+
+.brand-content h1 strong {
+    color: rgb(175, 187, 249);
+    font-weight: 800;
+    display: block;
+}
+
+.brand-description {
+    color: rgb(224, 231, 255);
+    font-size: 10px;
+    line-height: 1.7;
+    max-width: 380px;
+    margin-bottom: 32px;
+}
+
+.brand-features {
+    display: flex;
+    flex-direction: column;
+    gap: 17px;
+}
+
+.brand-feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-icon {
+    background: rgba(255, 255, 255, 0.09);
+    color: rgb(224, 231, 255);
+    font-size: 13px;
+    width: 34px;
+    height: 34px;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(5px);
+}
+
+.brand-feature strong {
+    color: rgb(255, 255, 255);
+    font-size: 10px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 3px;
+}
+
+.brand-feature span {
+    color: rgb(199, 210, 254);
+    font-size: 8px;
+    line-height: 1.5;
+    display: block;
+}
+
+.brand-bottom {
+    color: rgb(224, 231, 255);
+    font-size: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 20px;
+    margin-top: 32px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.brand-bottom i {
+    color: rgb(103, 249, 125);
+    font-size: 10px;
+}
+
+.signup-section {
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px 55px;
+    background: linear-gradient(135deg, rgb(255, 255, 255), rgb(250, 251, 255));
+}
+
+.signup-card {
+    width: 100%;
+    max-width: 390px;
+}
+
+.signup-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+}
+
+.logo-box {
+    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(99, 102, 241));
+    background-color: lightcoral;
+    width: 37px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    color: rgb(255, 255, 255);
+    font-size: 11px;
+    font-weight: 800;
+    box-shadow: 0 6px 15px rgba(79, 70, 229, 0.18);
+}
+
+.signup-logo strong {
+    color: rgb(17, 24, 39);
+    font-size: 12px;
+    font-weight: 800;
+    display: block;
+}
+
+.signup-logo span {
+    color: rgb(148, 163, 184);
+    font-size: 9px;
+    display: block;
+    margin-top: 2px;
+}
+
+.signup-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 24px;
+}
+
+.signup-icon {
+    background: rgb(238, 242, 255);
+    color: rgb(79, 70, 229);
+    font-size: 13px;
+    border-radius: 11px;
+    height: 43px;
+    width: 43px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-header h2 {
+    color: rgb(17, 24, 39);
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 4px;
+    letter-spacing: -0.5px;
+}
+
+.signup-header p {
+    color: rgb(148, 163, 184);
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.signup-group {
+    margin-bottom: 14px;
+}
+
+.signup-group label {
+    color: rgb(51, 65, 85);
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: block;
+}
+
+.signup-input {
+    position: relative;
+}
+
+.signup-input > i {
+    color: rgb(148, 163, 184);
+    font-size: 10px;
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.signup-input input {
+    background-color: rgb(248, 250, 252);
+    color: rgb(30, 41, 59);
+    height: 38px;
+    width: 100%;
+    padding: 0 35px;
+    border: 1px solid rgb(226, 232, 240);
+    border-radius: 8px;
+    outline: none;
+    font-family: inherit;
+    font-size: 10px;
+    transition: 0.2s;
+}
+
+.signup-input input::placeholder {
+    color: rgb(176, 186, 200);
+}
+
+.signup-input input:hover {
+    border-color: rgb(203, 213, 225);
+}
+
+.signup-input input:focus {
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(99, 102, 241);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.07);
+}
+
+.password-toggle {
+    background: transparent;
+    color: rgb(148, 163, 184);
+    border: none;
+    font-size: 10px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.password-toggle:hover {
+    color: rgb(79, 70, 229);
+}
+
+.signup-group small {
+    color: rgb(220, 38, 38);
+    font-size: 8px;
+    font-weight: 600;
+    display: block;
+    /* min-height: 10px; */
+    margin-top: 4px;
+}
+
+.terms {
+    color: rgb(100, 116, 139);
+    display: flex;
+    align-items: flex-start;
+    gap: 7px;
+    margin: 3px 0px 17px 0px;
+    font-size: 8px;
+    line-height: 1.6;
+    cursor: pointer;
+}
+
+#termsError {
+    color: rgb(220, 38, 38);
+    font-size: 8px;
+    font-weight: 600;
+    display: block;
+    /* min-height: 10px; */
+    margin-bottom: 10px;   
+}
+
+.terms input {
+    margin-top: 1px;
+    accent-color: rgb(79, 70, 229);
+}
+
+.terms a {
+    text-decoration: none;
+    color: rgb(79, 70, 229);
+    font-weight: 600;
+}
+
+.signup-button {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(99, 102, 241));
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.18);
+    transition: 0.2s;
+}
+
+.signup-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 11px 23px rgba(79, 70, 229, 0.25);
+}
+
+.signup-button:active {
+    transform: translateY(0);
+}
+
+.signup-button i {
+    font-size: 10px;
+}
+
+.login-text {
+    color: rgb(148, 163, 184);
+    font-size: 10px;
+    margin-top: 18px;
+    text-align: center;
+}
+
+.login-text a {
+    color: rgb(79, 70, 229);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.login-text a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    color: rgb(100, 116, 139);
+    text-decoration: none;
+    font-size: 9px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 14px auto 0;
+    width: fit-content;
+    transition: 0.2s;
+}
+
+.back-link:hover {
+    color: rgb(79, 70, 229);
+}
+
+.security-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid rgb(238, 240, 244);
+    color: rgb(148, 163, 184);
+    font-size: 9px;
+}
+
+.security-note i {
+    color: rgb(79, 70, 229);
+    font-size: 9px;
+}
+
+.success-toast {
+    background-color: rgb(255, 255, 255);
+    padding: 13px 14px;
+    border-radius: 10px;
+    box-shadow: 0 12px 35px rgba(30, 41, 59, 0.14);
+    border: 1px solid rgb(232, 234, 240);
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+}
+
+.success-toast.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.toast-icon {
+    background-color: rgb(220, 252, 231);
+    color: rgb(22, 163, 74);
+    font-size: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-content {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.toast-content strong {
+    color: rgb(30, 41, 59);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.toast-content span {
+    color: rgb(148, 163, 184);
+    font-size: 9px;
+}
+
+.toast-close {
+    background-color: rgb(252, 220, 220);
+    color: rgb(163, 22, 22);
+    border: none;
+    font-size: 10px;
+    width: 24px;
+    height: 24px;
+    border-radius: 5px;
+    margin-left: auto;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.toast-close:hover {
+    background-color: rgb(253, 44, 44);;
+    color: rgb(252, 220, 220);
+}

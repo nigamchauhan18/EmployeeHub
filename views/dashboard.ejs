@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="dashboard-page">
+        <section class="dashboard-header">
+            <div class="header-content">
+                <div class="page-breadcrumb">
+                    <a href="/dashboard">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Overview</span>
+                </div>
+                <div class="title-row">
+                    <div>
+                        <h1>Dashboard</h1>
+                        <p>Get a quick overview of your workforce, payroll and employee activity.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-date">
+                <div class="date-icon">
+                    <i class="fa-regular fa-calendar"></i>
+                </div>
+                <div>
+                    <span>Today</span>
+                    <strong id="currentDate">5 Oct 2026</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-stats">
+            <div class="dashboard-stat-card">
+                <div class="stat-card-header">
+                    <div class="dashboard-stat-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <span class="stat-label">TOTAL EMPLOYEES</span>
+                </div>
+                <div class="dashboard-stat-value" id="totalEmployees">0</div>
+                <div class="dashboard-stat-bottom">
+                    <span class="stat-description">
+                        <i class="fa-solid fa-user-group"></i>
+                        Registered employees
+                    </span>
+                </div>
+            </div>
+            <div class="dashboard-stat-card">
+                <div class="stat-card-header">
+                    <div class="dashboard-stat-icon green">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <span class="stat-label">ACTIVE EMPLOYEES</span>
+                </div>
+                <div class="dashboard-stat-value" id="activeEmployees">0</div>
+                <div class="dashboard-stat-bottom">
+                    <span class="status-dot active-dot"></span>
+                    <span class="stat-description" id="activePercentage">
+                        Currently working
+                    </span>
+                </div>
+            </div>
+            <div class="dashboard-stat-card">
+                <div class="stat-card-header">
+                    <div class="dashboard-stat-icon orange">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <span class="stat-label">DEPARTMENTS</span>
+                </div>
+                <div class="dashboard-stat-value" id="departmentCount">0</div>
+                <div class="dashboard-stat-bottom">
+                    <span class="stat-description">
+                        <i class="fa-solid fa-layer-group"></i>
+                        Active departments
+                    </span>
+                </div>
+            </div>
+            <div class="dashboard-stat-card">
+                <div class="stat-card-header">
+                    <div class="dashboard-stat-icon cyan">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <span class="stat-label">MONTHLY PAYROLL</span>
+                </div>
+                <div class="dashboard-stat-value payroll-value" id="totalPayroll">₹0</div>
+                <div class="dashboard-stat-bottom">
+                    <span class="stat-description">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        Total employee salary
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-section">
+            <div class="section-heading">
+                <div>
+                    <span class="section-label">QUICK ACTIONS</span>
+                    <h2>Manage your workforce</h2>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <a href="/employees" class="quick-action-card">
+                    <div class="quick-action-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <strong>View Employees</strong>
+                        <span>Browse employee records</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+                </a>
+                <button class="quick-action-card" id="addEmpDashBTN">
+                    <div class="quick-action-icon green">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <strong>Add Employee</strong>
+                        <span>Create a new employee</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+                </button>
+                <a href="/employees" class="quick-action-card">
+                    <div class="quick-action-icon orange">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+                    <div>
+                        <strong>Payroll</strong>
+                        <span>Review salary information</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+                </a>
+                <a href="/employees" class="quick-action-card">
+                    <div class="quick-action-icon cyan">
+                        <i class="fa-solid fa-chart-column"></i>
+                    </div>
+                    <div>
+                        <strong>Reports</strong>
+                        <span>View workforce insights</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right action-arrow"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="dashboard-main-grid">
+            <div class="dashboard-panel department-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-label">WORKFORCE</span>
+                        <h2>Department Overview</h2>
+                    </div>
+                    <a href="/employees" class="panel-link">
+                        View all
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="department-list" id="departmentList"></div>
+            </div>
+            <div class="dashboard-panel status-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-label">EMPLOYEE STATUS</span>
+                        <h2>Workforce Status</h2>
+                    </div>
+                </div>
+                <div class="status-overview">
+                    <div class="status-circle-wrapper">
+                        <div class="status-circle">
+                            <div>
+                                <strong id="statusPercentage">0%</strong>
+                                <span>Active</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="status-details">
+                        <div class="status-detail-row">
+                            <div class="status-detail-label">
+                                <span class="status-dot active-dot"></span>
+                                <span>Active</span>
+                            </div>
+                            <strong id="statusActive">0</strong>
+                        </div>
+                        <div class="status-detail-row">
+                            <div class="status-detail-label">
+                                <span class="status-dot inactive-dot"></span>
+                                <span>Inactive</span>
+                            </div>
+                            <strong id="statusInactive">0</strong>
+                        </div>
+                        <div class="status-detail-row total-row">
+                            <div class="status-detail-label">
+                                <i class="fa-solid fa-users"></i>
+                                <span>Total</span>
+                            </div>
+                            <strong id="statusTotal">0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="dashboard-panel recent-employees-panel">
+            <div class="panel-header">
+                <div>
+                    <span class="section-label">RECENT ACTIVITY</span>
+                    <h2>Recently Joined Employees</h2>
+                </div>
+                <a href="/employees" class="panel-link">
+                    View all
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </div>
+            <div class="recent-table-wrapper">
+                <table class="recent-table">
+                    <thead>
+                        <tr>
+                            <th>EMPLOYEE</th>
+                            <th>DEPARTMENT</th>
+                            <th>POSITION</th>
+                            <th>JOINED</th>
+                            <th>STATUS</th>
+                        </tr>
+                    </thead>
+                    <tbody id="recentEmployeeBody"></tbody>
+                </table>
+            </div>
+        </section>
+        <section class="dashboard-bottom-grid">
+            <div class="dashboard-panel payroll-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-label">FINANCIAL OVERVIEW</span>
+                        <h2>Payroll Summary</h2>
+                    </div>
+                </div>
+                <div class="payroll-summary">
+                    <div class="payroll-total">
+                        <span>Total Monthly Payroll</span>
+                        <strong id="payrollSummary">₹0</strong>
+                    </div>
+                    <div class="payroll-info">
+                        <div>
+                            <span>Average Salary</span>
+                            <strong id="averageSalary">₹0</strong>
+                        </div>
+                        <div>
+                            <span>Highest Salary</span>
+                            <strong id="highestSalary">₹0</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="dashboard-panel activity-panel">
+                <div class="panel-header">
+                    <div>
+                        <span class="section-label">ACTIVITY</span>
+                        <h2>Recent Activity</h2>
+                    </div>
+                </div>
+                <div class="activity-list" id="activityList">
+                    <div class="activity-item">
+                        <div class="activity-icon purple">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <div>
+                            <strong>New employee added</strong>
+                            <span>Employee records are updated</span>
+                        </div>
+                        <small>Today</small>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon green">
+                            <i class="fa-solid fa-user-check"></i>
+                        </div>
+                        <div>
+                            <strong>Employee status updated</strong>
+                            <span>Workforce information changed</span>
+                        </div>
+                        <small>Today</small>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon cyan">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+                        <div>
+                            <strong>Employee directory synced</strong>
+                            <span>Latest employee data available</span>
+                        </div>
+                        <small>Recently</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

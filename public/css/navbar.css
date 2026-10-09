@@ -1,0 +1,335 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f7f8fc;
+    color: #111827;
+    min-width: 1100px;
+}
+
+.navbar {
+    height: 72px;
+    padding: 0 45px;
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid #e8eaf0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-box {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #4f46e5, #6366f1);
+    color: white;
+    font-size: 12px;
+    font-weight: 800;
+    box-shadow: 0 7px 18px rgba(79, 70, 229, 0.25);
+}
+
+.logo-text h2 {
+    font-size: 16px;
+    letter-spacing: -0.5px;
+}
+
+.logo-text h2 span {
+    color: #4f46e5;
+}
+
+.logo-text p {
+    font-size: 8px;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 9px 13px;
+    border-radius: 7px;
+    transition: 0.2s;
+}
+
+.nav-links a:hover {
+    color: #4f46e5;
+    background: #f1f3ff;
+}
+
+.nav-links a.active {
+    color: #4f46e5;
+    background: #eef2ff;
+}
+
+.admin-profile {
+    position: relative;
+    display: block;
+}
+
+.navbar-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 20px;
+    border: 1px solid rgb(79, 70, 229);
+    border-radius: 9px;
+    background: rgb(79, 70, 229);
+    color: rgb(255, 255, 255);
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.navbar-login:hover {
+    background: rgb(67, 56, 202);
+    transform: translateY(-1px);
+}
+
+.profile-button {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 7px 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: rgb(38, 43, 58);
+    font-family: "Inter", sans-serif;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.profile-button:hover,
+.profile-button[aria-expanded="true"] {
+    background: rgb(248, 249, 252);
+    border-color: rgb(229, 231, 235);
+}
+
+.admin-avatar,
+.dropdown-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: rgb(79, 70, 229);
+    color: rgb(255, 255, 255);
+    font-weight: 700;
+}
+
+.admin-avatar {
+    width: 42px;
+    height: 42px;
+    font-size: 13px;
+}
+
+.admin-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.admin-info strong {
+    max-width: 145px;
+    overflow: hidden;
+    color: rgb(31, 41, 55);
+    font-size: 12px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.admin-info span {
+    color: rgb(123, 131, 148);
+    font-size: 10px;
+}
+
+.profile-arrow {
+    margin-left: 5px;
+    color: rgb(120, 126, 142);
+    font-size: 10px;
+    transition: transform 0.2s ease;
+}
+
+.profile-button[aria-expanded="true"] .profile-arrow {
+    transform: rotate(180deg);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+    z-index: 1000;
+    width: 255px;
+    padding: 10px;
+    border: 1px solid rgb(232, 234, 240);
+    border-radius: 13px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 12px 35px rgba(31, 41, 55, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+.profile-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-user {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 10px 8px;
+}
+
+.dropdown-avatar {
+    width: 40px;
+    height: 40px;
+    font-size: 12px;
+}
+
+.dropdown-user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.dropdown-user-info strong {
+    overflow: hidden;
+    color: rgb(31, 41, 55);
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown-user-info span {
+    overflow: hidden;
+    color: rgb(123, 131, 148);
+    font-size: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.dropdown-divider {
+    height: 1px;
+    margin: 7px 0;
+    background: rgb(237, 239, 244);
+}
+
+.dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 10px;
+    border-radius: 8px;
+    color: rgb(75, 81, 98);
+    font-size: 12px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-link i {
+    width: 17px;
+    color: rgb(105, 112, 132);
+    font-size: 13px;
+}
+
+.dropdown-link:hover {
+    background: rgb(243, 242, 255);
+    color: rgb(79, 70, 229);
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    width: 100%;
+    padding: 11px 10px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: rgb(220, 38, 38);
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+    background: rgb(254, 242, 242);
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        gap: 15px;
+    }
+
+    .nav-links {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 650px) {
+    .admin-info,
+    .profile-arrow {
+        display: none;
+    }
+
+    .profile-button {
+        padding: 4px;
+    }
+
+    .admin-avatar {
+        width: 38px;
+        height: 38px;
+    }
+
+    .navbar-login {
+        padding: 10px 13px;
+        font-size: 12px;
+    }
+
+    .profile-dropdown {
+        right: 0;
+        width: 240px;
+    }
+}

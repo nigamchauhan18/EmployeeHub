@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/help.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="help-page">
+        <section class="help-hero">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fa-solid fa-circle-question"></i>HELP & SUPPORT CENTER
+                </div>
+                <h1>
+                    How can we <strong>help you?</strong>
+                </h1>
+                <p>Find answers, explore helpful resources, or get in touch with our support team.</p>
+            </div>
+        </section>
+        <section class="help-container">
+            <div class="section-heading">
+                <div>
+                    <span>EXPLORE</span>
+                    <h2>Popular Help Topics</h2>
+                </div>
+                <p>Find quick answers to the most common questions.</p>
+            </div>
+            <div class="topic-grid">
+                <a href="#getting-started" class="topic-card">
+                    <div class="topic-icon purple">
+                        <i class="fa-solid fa-rocket"></i>
+                    </div>
+                    <div class="topic-content">
+                        <h3>Getting Started</h3>
+                        <p>Learn how to get started with EmployeeHub.</p>
+                        <span>Explore guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+                <a href="#employees" class="topic-card">
+                    <div class="topic-icon blue">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="topic-content">
+                        <h3>Employee Management</h3>
+                        <p>Add, update and manage employee information.</p>
+                        <span>
+                            Explore guide <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+                <a href="#security" class="topic-card">
+                    <div class="topic-icon green">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div class="topic-content">
+                        <h3>Account & Security</h3>
+                        <p>Manage your account and keep your information protected.</p>
+                        <span>
+                            Explore guide <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </div>
+                </a>
+            </div>
+            <section class="guides-section" id="getting-started">
+                <div class="section-heading">
+                    <div>
+                        <span>LEARN</span>
+                        <h2>Helpful Guides</h2>
+                    </div>
+                    <p>Simple guides to help you use EmployeeHub.</p>
+                </div>
+                <div class="guide-grid">
+                    <article class="guide-card">
+                        <div class="guide-number">01</div>
+                        <div class="guide-icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <h3>Create Your Account</h3>
+                        <p>Learn how to create your EmployeeHub account and access your workspace.</p>
+                        <a href="/signup">
+                            Read guide <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="guide-card" id="employees">
+                        <div class="guide-number">02</div>
+                        <div class="guide-icon">
+                            <i class="fa-solid fa-user-group"></i>
+                        </div>
+                        <h3>Manage Employees</h3>
+                        <p>Add employees, update their information and keep your employee records organized.</p>
+                        <a href="/employees">
+                            Read guide <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                    <article class="guide-card" id="security">
+                        <div class="guide-number">03</div>
+                        <div class="guide-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3>Account Security</h3>
+                        <p>Learn about login, password recovery and keeping your account protected.</p>
+                        <a href="/forgot-password">
+                            Read guide <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                    </article>
+                </div>
+            </section>
+            <section class="faq-section">
+                <div class="section-heading">
+                    <div>
+                        <span>FAQ</span>
+                        <h2>Frequently Asked Questions</h2>
+                    </div>
+                    <p>Quick answers to common questions.</p>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>How do I create an EmployeeHub account?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Click the Sign Up option, enter your name, email and password, agree to the terms, and create your account.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>I forgot my password. What should I do?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Go to the Login page and select "Forgot password?" to begin the account recovery process.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>How can I add a new employee?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Open the Employees page and click the Add Employee button. Enter the employee's information and submit the form to add them to your workforce directory.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>How can I update employee information?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Open the Employees page, find the employee you want to update and use the available employee management options.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button type="button" class="faq-question">
+                            <span>How can I contact support?</span>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Visit the Contact page and send us a message using the support form.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="support-card">
+                <div class="support-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+                <div class="support-content">
+                    <span>NEED MORE HELP?</span>
+                    <h2>Can't find what you're looking for?</h2>
+                    <p>Our support team is here to help you with your EmployeeHub questions.</p>
+                </div>
+                <a href="/contact" class="support-button">
+                    Contact Support <i class="fa-solid fa-arrow-right"></i>
+                </a>
+            </section>
+        </section>
+    </main>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/help.js"></script>
+</body>
+</html>

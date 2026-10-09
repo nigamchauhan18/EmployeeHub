@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub | <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/add-employee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="add-employee-page">
+        <section class="add-employee-header">
+            <div>
+                <div class="page-breadcrumb">
+                    <a href="/dashboard">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <a href="/employees">Employees</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Add Employee</span>
+                </div>
+                <div class="title-row">
+                    <div class="title-icon">
+                        <i class="fa-solid fa-user-plus"></i>
+                    </div>
+                    <div>
+                        <h1>Add Employee</h1>
+                        <p>Add a new employee to your workforce directory.</p>
+                    </div>
+                </div>
+            </div>
+            <a href="/employees" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i> Back to Employees
+            </a>
+        </section>
+        <section class="employee-form-card">
+            <div class="form-card-header">
+                <div>
+                    <h2>Employee Information</h2>
+                    <p>Enter the employee's details below.</p>
+                </div>
+                <span class="required-note"><span>*</span> Required fields</span>
+            </div>
+            <form id="addEmployeeForm" novalidate>
+                <div class="form-section">
+                    <div class="section-heading">
+                        <div class="section-icon purple">
+                            <i class="fa-regular fa-user"></i>
+                        </div>
+                        <div>
+                            <h3>Personal Information</h3>
+                            <p>Basic employee details</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="empName">Full Name <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="empName" name="empName" placeholder="Enter full name" autocomplete="off">
+                            </div>
+                            <small class="error-message" id="empNameError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="empEmail">Email Address <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="empEmail" name="empEmail" placeholder="employee@example.com" autocomplete="off">
+                            </div>
+                            <small class="error-message" id="empEmailError"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-section">
+                    <div class="section-heading">
+                        <div class="section-icon blue">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+                        <div>
+                            <h3>Job Information</h3>
+                            <p>Department and position details</p>
+                        </div>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="empDepartment">Department <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-building"></i>
+                                <select id="empDepartment" name="empDepartment">
+                                    <option value="">Select department</option>
+                                    <option value="Development">Development</option>
+                                    <option value="Design">Design</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="HR">HR</option>
+                                    <option value="Finance">Finance</option>
+                                </select>
+                            </div>
+                            <small class="error-message" id="empDepartmentError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="empPosition">Position <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-id-badge"></i>
+                                <input type="text" id="empPosition" name="empPosition" placeholder="e.g. Frontend Developer" autocomplete="off">
+                            </div>
+                            <small class="error-message" id="empPositionError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="empSalary">Monthly Salary <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                                <input type="number" id="empSalary" name="empSalary" placeholder="Enter monthly salary" min="1">
+                            </div>
+                            <small class="error-message" id="empSalaryError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="empJoined">Joining Date <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-regular fa-calendar"></i>
+                                <input type="date" id="empJoined" name="empJoined">
+                            </div>
+                            <small class="error-message" id="empJoinedError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="empStatus">Employee Status <span>*</span></label>
+                            <div class="input-wrapper">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <select id="empStatus" name="empStatus">
+                                    <option value="">Select status</option>
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                </select>
+                            </div>
+                            <small class="error-message" id="empStatusError"></small>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <a href="/employees" class="cancel-btn">Cancel</a>
+                    <button type="submit" class="save-btn">
+                        <i class="fa-solid fa-user-plus"></i>
+                        Add Employee
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <div class="success-toast" id="successToast">
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="toast-content">
+            <strong>Employee Added Successfully</strong>
+            <span>The employee has been added to your workforce.</span>
+        </div>
+        <button type="button" class="toast-close" id="toastClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/add-employee.js"></script>
+</body>
+</html>

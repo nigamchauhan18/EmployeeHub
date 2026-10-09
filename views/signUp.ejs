@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/signUp.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <main class="signup-page">
+        <div class="signup-wrapper">
+            <section class="signup-brand">
+                <div class="brand-glow glow-one"></div>
+                <div class="brand-glow glow-two"></div>
+                <div class="brand-content">
+                    <div class="brand-label">
+                        <span></span>EMPLOYEE MANAGEMENT SYSTEM
+                    </div>
+                    <h1>Manage your team. <strong>Build better workplaces.</strong></h1>
+                    <p class="brand-description">EmployeeHub brings your employees, departments, attendance, records and daily operations together in onesimple workspace.</p>
+                    <div class="brand-features">
+                        <div class="brand-feature">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-users"></i>
+                            </div>
+                            <div>
+                                <strong>Centralized Employee Records</strong>
+                                <span>Keep employee information organized and easy to access.</span>
+                            </div>
+                        </div>
+                        <div class="brand-feature">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-chart-line"></i>
+                            </div>
+                            <div>
+                                <strong>Simple Management</strong>
+                                <span>Manage everyday employee operations from one place.</span>
+                            </div>
+                        </div>
+                        <div class="brand-feature">
+                            <div class="feature-icon">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <div>
+                                <strong>Secure Access</strong>
+                                <span>Keep your management data protected with controlled access.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brand-bottom">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Everything your team needs, all in one place.</span>
+                    </div>
+                </div>
+            </section>
+            <section class="signup-section">
+                <div class="signup-card">
+                    <div class="signup-logo">
+                        <div class="logo-box">EH</div>
+                        <div>
+                            <strong>EmployeeHub</strong>
+                            <span>Employee Management System</span>
+                        </div>
+                    </div>
+                    <div class="signup-header">
+                        <div class="signup-icon">
+                            <i class="fa-solid fa-user-plus"></i>
+                        </div>
+                        <div>
+                            <h2>Create your account</h2>
+                            <p>Get started with EmployeeHub in just a few steps.</p>
+                        </div>
+                    </div>
+                    <form id="signupForm">
+                        <div class="signup-group">
+                            <label for="signupName">Full Name</label>
+                            <div class="signup-input">
+                                <i class="fa-regular fa-user"></i>
+                                <input type="text" id="signupName" name="name" placeholder="Enter your full name">
+                            </div>
+                            <small id="nameError"></small>
+                        </div>
+                        <div class="signup-group">
+                            <label for="signupEmail">Email Address</label>
+                            <div class="signup-input">
+                                <i class="fa-regular fa-envelope"></i>
+                                <input type="email" id="signupEmail" name="email" placeholder="Enter your email address">
+                            </div>
+                            <small id="emailError"></small>
+                        </div>
+                        <div class="signup-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="signup-input">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="signupPassword" name="password" placeholder="Create a strong password">
+                                <button type="button" class="password-toggle" id="passwordToggle">
+                                    <i class="fa-regular fa-eye"></i>
+                                </button>
+                            </div>
+                            <small id="passwordError"></small>
+                        </div>
+                        <div class="signup-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="signup-input">
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter your password">
+                            </div>
+                            <small id="confirmPasswordError"></small>
+                        </div>
+                        <label class="terms">
+                            <input type="checkbox" id="terms">
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>.</span>
+                        </label>
+                        <small id="termsError"></small>
+                        <button type="submit" class="signup-button">Create Account<i class="fa-solid fa-arrow-right"></i></button>
+                    </form>
+                    <div class="login-text">Already have an account? <a href="/login">Log in</a></div>
+                    <a href="/" class="back-link"><i class="fa-solid fa-arrow-left"></i>Back to EmployeeHub</a>
+                    <div class="security-note">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Your information is securely protected.</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <div class="success-toast" id="successToast">
+        <div class="toast-icon">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <div class="toast-content">
+            <strong>Sign-Up Successful</strong>
+            <span>Welcome to EmployeeHub!</span>
+        </div>
+        <button type="button" class="toast-close" id="toastClose">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+    </div>
+    <script src="/js/signUp.js"></script>
+</body>
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmployeeHub - <%= title %></title>
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/employees.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <%- include("partials/navbar") %>
+    <main class="employees-page">
+        <section class="employees-header">
+            <div class="header-content">
+                <div class="page-breadcrumb">
+                    <a href="/dashboard">Dashboard</a>
+                    <i class="fa-solid fa-chevron-right"></i>
+                    <span>Employees</span>
+                </div>
+                <div class="title-row">
+                    <div>
+                        <h1>Employees</h1>
+                        <p>Manage your workforce, employee records, salaries and departments.</p>
+                    </div>
+                </div>
+            </div>
+            <button class="add-employee-btn" id="addEmployeeBtn"><i class="fa-solid fa-plus"></i>Add Employee </button>
+        </section>
+        <section class="employee-stats">
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-icon purple">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <span class="stat-label">TOTAL EMPLOYEES</span>
+                </div>
+                <div class="stat-value" id="totalEmployees">0</div>
+                <div class="stat-bottom">
+                    <span class="stat-description">
+                        <i class="fa-solid fa-user-group"></i>
+                        All registered employees
+                    </span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-icon green">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+                    <span class="stat-label">ACTIVE</span>
+                </div>
+                <div class="stat-value" id="activeEmployees">0</div>
+                <div class="stat-bottom">
+                    <span class="status-dot active-dot"></span>
+                    <span class="stat-description" id="activePercentage">Currently working</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-icon orange">
+                        <i class="fa-solid fa-user-clock"></i>
+                    </div>
+                    <span class="stat-label">INACTIVE</span>
+                </div>
+                <div class="stat-value" id="inactiveEmployees">0</div>
+                <div class="stat-bottom">
+                    <span class="status-dot inactive-dot"></span>
+                    <span class="stat-description">Inactive or on leave</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-card-header">
+                    <div class="stat-icon cyan">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <span class="stat-label">MONTHLY PAYROLL</span>
+                </div>
+                <div class="stat-value payroll-value" id="totalPayroll"><i class="fa-solid fa-indian-rupee-sign"></i>0</div>
+                <div class="stat-bottom">
+                    <span class="stat-description">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        Total employee salary
+                    </span>
+                </div>
+            </div>
+        </section>
+        <section class="employees-container">
+            <div class="employee-toolbar-header">
+                <div>
+                    <span class="section-label">WORKFORCE DIRECTORY</span>
+                    <h2>All Employees</h2>
+                </div>
+                <div class="directory-count">
+                    <i class="fa-solid fa-database"></i>
+                    <span id="directoryCount">0 employee</span>
+                </div>
+            </div>
+            <div class="filter-panel">
+                <div class="search-wrapper">
+                    <label>Search Employee</label>
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="employeeSearch" placeholder="Name, email or employee ID...">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="departmentFilter">Department</label>
+                    <div class="select-wrapper">
+                        <i class="fa-solid fa-building"></i>
+                        <select id="departmentFilter">
+                            <option value="all">All Departments</option>
+                            <option value="Development">Development</option>
+                            <option value="Design">Design</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="HR">Human Resources</option>
+                            <option value="Finance">Finance</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="statusFilter">Status</label>
+                    <div class="select-wrapper">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <select id="statusFilter">
+                            <option value="all">All Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="salaryFilter">Salary Range</label>
+                    <div class="select-wrapper">
+                        <i class="fa-solid fa-indian-rupee-sign"></i>
+                        <select id="salaryFilter">
+                            <option value="all">All Salaries</option>
+                            <option value="below40">Below ₹40,000</option>
+                            <option value="40to60">₹40,000 - ₹60,000</option>
+                            <option value="60to80">₹60,000 - ₹80,000</option>
+                            <option value="80to100">₹80,000 - ₹1,00,000</option>
+                            <option value="100to150">₹1,00,000 - ₹1,50,000</option>
+                            <option value="above150">Above ₹1,50,000</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <label for="sortFilter">Sort By</label>
+                    <div class="select-wrapper">
+                        <i class="fa-solid fa-arrow-down-wide-short"></i>
+                        <select id="sortFilter">
+                            <option value="default">Default</option>
+                            <option value="nameAsc">Name A-Z</option>
+                            <option value="nameDesc">Name Z-A</option>
+                            <option value="salaryHigh">Salary High-Low</option>
+                            <option value="salaryLow">Salary Low-High</option>
+                            <option value="newest">Newest Joined</option>
+                            <option value="oldest">Oldest Joined</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="button" id="resetFilters" class="reset-btn" title="Reset Filters">
+                    <i class="fa-solid fa-rotate-left"></i>
+                    <span>Reset</span>
+                </button>
+            </div>
+            <div class="results-bar">
+                <div class="results-text">Showing <strong id="resultCount">0</strong> employees</div>
+                <div class="view-options">
+                    <button class="view-btn active" id="listView" title="List View">
+                        <i class="fa-solid fa-list"></i>
+                    </button>
+                    <button class="view-btn" id="gridView" title="Grid View">
+                        <i class="fa-solid fa-grip"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="employee-table-wrapper" id="tableView">
+                <table class="employee-table">
+                    <thead>
+                        <tr>
+                            <th>EMPLOYEE</th>
+                            <th>ID</th>
+                            <th>DEPARTMENT</th>
+                            <th>POSITION</th>
+                            <th>SALARY</th>
+                            <th>JOINED</th>
+                            <th>STATUS</th>
+                            <th>ACTION</th>
+                        </tr>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                        <!-- <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">NC</div>
+                                    <div>
+                                        <div class="employee-name">Nigam Chauhan</div>
+                                        <div class="employee-email">nigamchauhan@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-001</span></td>
+                            <td><span class="department-badge">Development</span></td>
+                            <td><span class="position-text">Frontend Developer</span></td>
+                            <td><span class="salary-text">45000</span></td>
+                            <td><span class="joined-text">1 Oct 2026</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <a href="/employees" class="action-btn" title="View">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </a>
+                                    <a href="/employees" class="action-btn" title="Edit">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </a>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <a href="/employees"><i class="fa-regular fa-eye"></i>View</a>
+                                            <a href="/employees"><i class="fa-regular fa-pen-to-square"></i>Edit</a>
+                                            <button type="button" class="delete-action" id="deleteEmployee"><i class="fa-regular fa-trash-can"></i>Delete</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+            <div class="employee-grid" id="employeeGrid">
+                <!-- <div class="employee-grid-card">
+                    <div class="grid-card-top">
+                        <div class="grid-employee-info">
+                            <div class="employee-avatar">NC</div>
+                            <div>
+                                <strong>Nigam Chauhan</strong>
+                                <span>nigamchauhan@gmail.com</span>
+                            </div>
+                        </div>
+                        <span class="status-badge active">
+                            <i class="fa-solid fa-circle"></i>Active
+                        </span>
+                    </div>
+                    <div class="grid-details">
+                        <div class="grid-detail">
+                            <span>Employee ID</span>
+                            <strong>EMP-001</strong>
+                        </div>
+                        <div class="grid-detail">
+                            <span>Department</span>
+                            <strong>Development</strong>
+                        </div>
+                        <div class="grid-detail">
+                            <span>Salary</span>
+                            <strong>45000</strong>
+                        </div>
+                        <div class="grid-detail">
+                            <span>Joined</span>
+                            <strong>1 Oct 2026</strong>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="empty-state" id="emptyState">
+                <div class="empty-icon">
+                    <i class="fa-solid fa-user-slash"></i>
+                </div>
+                <h3>No employees found</h3>
+                <p>Try changing your search or filter options.</p>
+                <button type="button" id="emptyReset" class="empty-reset">Reset Filters</button>
+            </div>
+            <div class="table-footer">
+                <span id="tableInfo">Showing 0 employees</span>
+            </div>
+        </section>
+    </main>
+    <div class="delete-modal-overlay" id="deleteModal">
+        <div class="delete-modal">
+            <div class="delete-modal-icon">
+                <i class="fa-regular fa-trash-can"></i>
+            </div>
+            <h3>Delete Employee?</h3>
+            <p>Are you sure you want to delete <strong id="deleteEmployeeName">this employee</strong>? This action cannot be undone.</p>
+            <div class="delete-modal-actions">
+                <button type="button" class="cancel-delete" id="cancelDelete">Cancel</button>
+                <button type="button" class="confirm-delete" id="confirmDelete"><i class="fa-regular fa-trash-can"></i>Delete</button>
+            </div>
+        </div>
+    </div>
+    <%- include("partials/footer") %>
+    <script src="/js/navbar.js"></script>
+    <script src="/js/employees.js"></script>
+</body>
+</html>
