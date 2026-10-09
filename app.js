@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 
+const PORT = 3000;
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
@@ -67,6 +68,6 @@ app.get("/about", (req, res) => {
     });
 });
 
-app.listen(3000, () => {
-    console.log("Server running on http://localhost:3000");
+app.listen(PORT, "0.0.0.0", () => {
+    console.log(`EmployeeHub running on port ${PORT}`);
 });
