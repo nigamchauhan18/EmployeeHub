@@ -10,16 +10,25 @@ let homeAddEmpBTN1 = document.querySelector("#homeAddEmpBTN1");
 
 homeAddEmpBTN.addEventListener('click', () => {
     let isLoggedIn = localStorage.getItem('isLoggedIn');
+    let logInSuccess = localStorage.getItem('logInSuccess');
+    
     if (!isLoggedIn) {
         window.location.href = '/signup';
+        return;
+    } else if (!logInSuccess) {
+        window.location.href = '/login';
         return;
     }
     window.location.href = '/employee/add';
 });
 homeAddEmpBTN1.addEventListener('click', () => {
     let isLoggedIn = localStorage.getItem('isLoggedIn');
+    let logInSuccess = localStorage.getItem('logInSuccess');
     if (!isLoggedIn) {
         window.location.href = '/signup';
+        return;
+    } else if (!logInSuccess) {
+        window.location.href = '/login';
         return;
     }
     window.location.href = '/employee/add';

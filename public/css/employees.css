@@ -840,3 +840,12 @@ body {
     background-color: rgb(185, 28, 28);
     border-color: rgb(185, 28, 28);
 }
+
+.nav-links a:hover {
+    color: #4f46e5;
+    background: #f1f3ff;
+}
+.nav-links a.employeesNav {
+    color: #4f46e5;
+    background: #eef2ff;
+}

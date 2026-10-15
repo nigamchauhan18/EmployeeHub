@@ -20,8 +20,13 @@ let addEmpDashBTN = document.querySelector("#addEmpDashBTN");
 
 addEmpDashBTN.addEventListener('click', () => {
     let isLoggedIn = localStorage.getItem('isLoggedIn');
+    let logInSuccess = localStorage.getItem('logInSuccess');
+
     if (!isLoggedIn) {
         window.location.href = '/signup';
+        return;
+    } else if (!logInSuccess) {
+        window.location.href = 'login';
         return;
     }
     window.location.href = '/employee/add';

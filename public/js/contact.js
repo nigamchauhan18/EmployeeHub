@@ -50,7 +50,6 @@ contactForm.addEventListener('submit', async (e) => {
         window.location.href = '/signup';
         return;
     }
-
     let logInSuccess = localStorage.getItem('logInSuccess');
     if (!logInSuccess) {
         window.location.href = '/login';
@@ -58,7 +57,6 @@ contactForm.addEventListener('submit', async (e) => {
     }
     
     let valid = true;
-
     if (fullName.value === "") {
         nameError.style.display = 'block';
         nameError.textContent = "Please enter your name.";
@@ -83,23 +81,39 @@ contactForm.addEventListener('submit', async (e) => {
         return;
     }
 
-    let contactInfo = JSON.parse(localStorage.getItem('contactInfo')) || [];
-    contactInfo.unshift({
-        fullName: fullName.value,
-        emailID: emailID.value,
-        selectSubject: selectSubject.value,
-        textareaText: textareaText.value,
-    });
-    localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
-    // localStorage.clear();
-    contactForm.reset();
+    let templateParams = {
+        from_name: fullName.value.trim(),
+        from_email: emailID.value.trim(),
+        subject: selectSubject.value,
+        message: textareaText.value.trim()
+    };
 
-    successToast.classList.add('show');
-    setTimeout(() => {
-        successToast.classList.remove('show');
-    }, 2000);
+    try {
+        await emailjs.send('service_3nlurua', 'template_lcop81t',
+            templateParams, {
+                publicKey: 'wGzfZlCf9ItV-tkqU'
+            }
+        );
+        let contactInfo = JSON.parse(localStorage.getItem('contactInfo')) || [];
+        contactInfo.unshift({
+            fullName: fullName.value,
+            emailID: emailID.value,
+            selectSubject: selectSubject.value,
+            textareaText: textareaText.value,
+        });
+        localStorage.setItem('contactInfo', JSON.stringify(contactInfo));
+        alert('Your message has been sent successfully!');
+        contactForm.reset();
 
-    toastClose.addEventListener("click", function () {
-        successToast.classList.remove("show");
-    });
+        successToast.classList.add('show');
+        setTimeout(() => {
+            successToast.classList.remove('show');
+        }, 2000);
+        toastClose.addEventListener("click", function () {
+            successToast.classList.remove("show");
+        });
+    } catch (error) {
+        console.error('Email sending failed:', error);
+        alert('Unable to send your message. Please try again later.');   
+    }
 });

@@ -896,3 +896,12 @@
         font-size: 19px;
     }
 }
+
+.nav-links a:hover {
+    color: #4f46e5;
+    background: #f1f3ff;
+}
+.nav-links a.homeNav {
+    color: #4f46e5;
+    background: #eef2ff;
+}
