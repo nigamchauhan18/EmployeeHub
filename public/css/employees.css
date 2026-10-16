@@ -396,7 +396,7 @@ body {
 
 .employee-table th {
     color: rgb(124, 137, 156);
-    border-bottom: 1px solidx rgb(226, 232, 240);
+    border-bottom: 1px solid rgb(226, 232, 240);
     padding: 12px 16px;
     font-size: 9px;
     font-weight: 800;
@@ -848,4 +848,1102 @@ body {
 .nav-links a.employeesNav {
     color: #4f46e5;
     background: #eef2ff;
+}
+
+html {
+    width: 100%;
+    min-width: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.employees-page {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.employee-table thead th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    background-color: rgb(248, 250, 252);
+    box-shadow: 0 1px 0 rgb(226, 232, 240);
+}
+
+.employee-table thead {
+    position: relative;
+    z-index: 5;
+}
+
+.employee-table tbody {
+    position: relative;
+    z-index: 1;
+}
+
+.employees-header > *,
+.employee-toolbar-header > *,
+.filter-panel > *,
+.results-bar > *,
+.table-footer > *,
+.employee-grid > *,
+.employee-grid-card,
+.stat-card {
+    min-width: 0;
+}
+
+.employees-page input,
+.employees-page select,
+.employees-page button {
+    max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+
+    .employees-page {
+        padding: 30px 22px 45px;
+    }
+
+    .employee-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .filter-panel {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .search-wrapper {
+        grid-column: span 2;
+    }
+
+    .reset-btn {
+        width: 100%;
+    }
+
+    .employee-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stat-card {
+        padding: 17px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .employees-page {
+        padding: 25px 18px 35px;
+    }
+
+    .employees-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 23px;
+    }
+
+    .employees-header h1 {
+        font-size: 27px;
+        letter-spacing: -0.6px;
+    }
+
+    .employees-header p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .add-employee-btn {
+        height: 42px;
+        padding: 0 15px;
+    }
+
+    .employee-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 18px;
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .stat-icon {
+        width: 35px;
+        height: 35px;
+        font-size: 13px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+        letter-spacing: 0.4px;
+    }
+
+    .stat-value {
+        font-size: 23px;
+        margin-top: 12px;
+        overflow-wrap: anywhere;
+    }
+
+    .payroll-value {
+        font-size: 19px;
+    }
+
+    .stat-description {
+        font-size: 9px;
+        flex-wrap: wrap;
+    }
+
+    .employee-toolbar-header {
+        padding: 17px;
+        gap: 12px;
+    }
+
+    .employee-toolbar-header h2 {
+        font-size: 16px;
+    }
+
+    .directory-count {
+        padding: 8px;
+        font-size: 10px;
+        white-space: nowrap;
+    }
+
+    .filter-panel {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        padding: 16px;
+        gap: 13px;
+    }
+
+    .search-wrapper {
+        grid-column: 1 / -1;
+    }
+
+    .search-box,
+    .select-wrapper select,
+    .reset-btn {
+        height: 40px;
+    }
+
+    .search-box input {
+        min-width: 0;
+    }
+
+    .select-wrapper select {
+        font-size: 10px;
+        padding-left: 28px;
+    }
+
+    .reset-btn {
+        align-self: end;
+    }
+
+    .results-bar {
+        padding: 10px 16px;
+        min-height: 48px;
+        gap: 12px;
+    }
+
+    .results-text {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .view-options {
+        flex-shrink: 0;
+    }
+
+    .employee-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .employee-table {
+        min-width: 900px;
+    }
+
+    .employee-table th,
+    .employee-table td {
+        padding: 12px;
+    }
+
+    .employee-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        padding: 15px;
+    }
+
+    .employee-grid-card {
+        padding: 13px;
+    }
+
+    .grid-employee-info {
+        gap: 7px;
+        min-width: 0;
+    }
+
+    .grid-employee-info > div {
+        min-width: 0;
+    }
+
+    .grid-employee-info strong {
+        overflow-wrap: anywhere;
+    }
+
+    .grid-details {
+        gap: 10px;
+    }
+
+    .grid-detail strong {
+        overflow-wrap: anywhere;
+    }
+
+    .table-footer {
+        padding: 12px 16px;
+        min-height: 48px;
+        gap: 12px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+    .delete-modal {
+        max-width: 380px;
+        padding: 25px 22px;
+    }
+
+    .delete-modal h3 {
+        font-size: 18px;
+    }
+
+    .delete-modal p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .delete-modal-actions button {
+        min-height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .employees-page {
+        padding: 35px 17px 28px;
+    }
+
+    .employees-header {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .page-breadcrumb {
+        gap: 7px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        flex-wrap: wrap;
+    }
+
+    .employees-header h1 {
+        font-size: 24px;
+        letter-spacing: -0.6px;
+        line-height: 1.3;
+    }
+
+    .employees-header p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .add-employee-btn {
+        width: 100%;
+        justify-content: center;
+        height: 42px;
+        font-size: 12px;
+    }
+
+    .employee-stats {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .stat-card {
+        padding: 13px 11px;
+        border-radius: 11px;
+    }
+
+    .stat-card-header {
+        gap: 6px;
+    }
+
+    .stat-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        font-size: 12px;
+    }
+
+    .stat-label {
+        font-size: 8px;
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+
+    .stat-value {
+        font-size: 21px;
+        margin-top: 11px;
+    }
+
+    .payroll-value {
+        font-size: 17px;
+    }
+
+    .stat-bottom {
+        gap: 5px;
+        margin-top: 9px;
+        align-items: flex-start;
+    }
+
+    .stat-description {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+    
+    .employees-container {
+        border-radius: 11px;
+    }
+
+    .employee-toolbar-header {
+        padding: 15px 12px;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .section-label {
+        font-size: 8px;
+        letter-spacing: 0.7px;
+    }
+
+    .employee-toolbar-header h2 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .directory-count {
+        padding: 7px;
+        gap: 5px;
+        font-size: 9px;
+        border-radius: 6px;
+    }
+
+    .filter-panel {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 14px 12px;
+        gap: 12px;
+    }
+
+    .search-wrapper {
+        grid-column: auto;
+    }
+
+    .search-wrapper label,
+    .filter-group label {
+        font-size: 10px;
+        margin-bottom: 6px;
+    }
+
+    .search-box,
+    .select-wrapper select {
+        height: 42px;
+    }
+
+    .search-box {
+        padding: 0 10px;
+    }
+
+    .search-box input {
+        font-size: 12px;
+    }
+
+    .select-wrapper select {
+        font-size: 11px;
+    }
+
+    .reset-btn {
+        width: 100%;
+        height: 42px;
+        font-size: 11px;
+    }
+
+    .results-bar {
+        padding: 11px 12px;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .results-text {
+        font-size: 9px;
+        min-width: 0;
+    }
+
+    .view-options {
+        gap: 2px;
+    }
+
+    .view-btn {
+        width: 27px;
+        height: 27px;
+        flex-shrink: 0;
+    }
+
+    .employee-table {
+        min-width: 900px;
+    }
+
+    .employee-table th {
+        font-size: 9px;
+        padding: 11px 12px;
+    }
+
+    .employee-table td {
+        font-size: 10px;
+        padding: 12px;
+    }
+
+    .employee-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 11px;
+        padding: 12px;
+    }
+
+    .employee-grid-card {
+        padding: 14px;
+    }
+
+    .grid-employee-info strong {
+        font-size: 12px;
+    }
+
+    .grid-employee-info span {
+        font-size: 10px;
+    }
+
+    .grid-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 13px;
+        margin-top: 14px;
+        padding-top: 12px;
+    }
+
+    .grid-detail span {
+        font-size: 9px;
+    }
+
+    .grid-detail strong {
+        font-size: 11px;
+    }
+
+    .action-buttons {
+        gap: 5px;
+    }
+
+    .action-btn {
+        width: 30px;
+        height: 30px;
+        flex-shrink: 0;
+    }
+
+    .table-footer {
+        padding: 12px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .empty-state {
+        padding: 40px 14px;
+    }
+
+    .empty-state h3 {
+        font-size: 16px;
+    }
+
+    .empty-state p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .delete-modal-overlay {
+        padding: 14px;
+    }
+
+    .delete-modal {
+        padding: 23px 17px;
+        border-radius: 13px;
+    }
+
+    .delete-modal-icon {
+        width: 46px;
+        height: 46px;
+        font-size: 18px;
+        margin-bottom: 13px;
+    }
+
+    .delete-modal h3 {
+        font-size: 17px;
+        line-height: 1.4;
+    }
+
+    .delete-modal p {
+        font-size: 12px;
+        line-height: 1.6;
+    }
+
+    .delete-modal-actions {
+        gap: 8px;
+        margin-top: 20px;
+    }
+
+    .delete-modal-actions button {
+        flex: 1;
+        min-width: 0;
+        padding: 0 10px;
+        font-size: 12px;
+    }
+
+    .action-menu {
+        width: 140px;
+        max-width: calc(100vw - 35px);
+    }
+}
+
+@media (max-width: 360px) {
+
+    .employees-page {
+        padding: 17px 10px 24px;
+    }
+
+    .employees-header h1 {
+        font-size: 22px;
+    }
+
+    .employees-header p {
+        font-size: 10px;
+    }
+
+    .employee-stats {
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 11px 9px;
+    }
+
+    .stat-icon {
+        width: 29px;
+        height: 29px;
+        font-size: 11px;
+    }
+
+    .stat-label {
+        font-size: 7px;
+        letter-spacing: 0.2px;
+    }
+
+    .stat-value {
+        font-size: 19px;
+    }
+
+    .payroll-value {
+        font-size: 15px;
+    }
+
+    .stat-description {
+        font-size: 8px;
+    }
+
+    .employee-toolbar-header {
+        padding: 13px 10px;
+    }
+
+    .employee-toolbar-header h2 {
+        font-size: 13px;
+    }
+
+    .directory-count {
+        font-size: 8px;
+        padding: 6px;
+    }
+
+    .filter-panel {
+        padding: 12px 10px;
+    }
+
+    .results-bar {
+        padding: 10px;
+    }
+
+    .results-text {
+        font-size: 8px;
+    }
+
+    .employee-grid {
+        padding: 10px;
+    }
+
+    .delete-modal-actions {
+        flex-direction: column-reverse;
+    }
+
+    .delete-modal-actions button {
+        width: 100%;
+        min-height: 42px;
+    }
+}
+
+@media (hover: none) {
+
+    .stat-card:hover {
+        transform: none;
+        box-shadow: 0 3px 12px rgba(30, 41, 59, 0.035);
+    }
+
+    .add-employee-btn:hover {
+        transform: none;
+    }
+
+    .employee-grid-card:hover {
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.edit-modal-overlay {
+    background-color: rgba(15, 23, 42, 0.48);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(3px);
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.edit-modal-overlay.show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.edit-modal {
+    background-color: #ffffff;
+    padding: 28px;
+    border: 1px solid rgb(226, 228, 235);
+    border-radius: 16px;
+    box-shadow: 0 24px 65px rgba(15, 23, 42, 0.2);
+    width: 100%;
+    max-width: 650px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    transform: translateY(10px) scale(0.98);
+    transition: transform 0.2s ease;
+}
+
+.edit-modal-overlay.show .edit-modal {
+    transform: translateY(0) scale(1);
+}
+
+.edit-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.edit-modal-label {
+    color: rgb(99, 102, 241);
+    font-size: 9px;
+    font-weight: 800;
+    display: block;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.edit-modal-header h2 {
+    color: rgb(30, 41, 59);
+    font-size: 23px;
+    font-weight: 750;
+    margin: 0;
+}
+
+.edit-modal-header p {
+    color: rgb(100, 116, 139);
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 7px;
+}
+
+.edit-modal-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(100, 116, 139);
+    cursor: pointer;
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    border: 1px solid rgb(226, 232, 240);
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.edit-modal-close:hover {
+    background-color: rgb(248, 250, 252);
+    color: rgb(79, 70, 229);
+}
+
+.edit-form-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.edit-form-group {
+    min-width: 0;
+}
+
+.edit-form-group label {
+    color: rgb(71, 85, 105);
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.edit-form-group input, .edit-form-group select {
+    background-color: #ffffff;
+    color: rgb(30, 41, 59);
+    font-size: 12px;
+    font-family: inherit;
+    border: 1px solid rgb(226, 232, 240);
+    outline: none;
+    padding: 0 12px;
+    width: 100%;
+    height: 42px;
+    min-width: 0;
+    border-radius: 8px;
+    display: block;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.edit-form-group input:focus, .edit-form-group select:focus {
+    border-color: rgb(129, 140, 248);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+}
+
+.edit-full-width {
+    grid-column: 1 / -1;
+}
+
+.edit-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 27px;
+    padding-top: 20px;
+    border-top: 1px solid rgb(241, 245, 249);
+}
+
+.edit-modal-actions button {
+    min-height: 40px;
+    padding: 0 17px;
+    gap: 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.edit-cancel-btn {
+    background-color: #ffffff;
+    color: rgb(71, 85, 105);
+    border: 1px solid rgb(226, 232, 240);
+}
+
+.edit-cancel-btn:hover {
+    background-color: rgb(248, 250, 252);
+}
+
+.edit-save-btn {
+    background-color: rgb(79, 70, 229);
+    color: #ffffff;
+    border: 1px solid rgb(79, 70, 229);
+}
+
+.edit-save-btn:hover {
+    background-color: rgb(67, 56, 202);
+    transform: translateY(-1px);
+}
+
+@media screen and (max-width: 480px) {
+    .edit-modal-overlay {
+        padding: 12px;
+    }
+    .edit-modal {
+        padding: 21px 16px;
+        max-height: calc(100vh - 24px);
+        border-radius: 13px;
+    }
+    .edit-modal-header h2 {
+        font-size: 20px;
+    }
+    .edit-form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 15px;
+    }
+    .edit-full-width {
+        grid-column: auto;
+    }    
+    .edit-modal-actions {
+        gap: 8px;
+    }
+    .edit-modal-actions button {
+        flex: 1;
+        padding: 0 10px;
+    }
+}
+
+.view-employee-modal {
+    background-color: rgba(15, 23, 42, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    backdrop-filter: blur(4px);
+}
+
+.view-employee-modal.show {
+    display: flex;
+}
+
+.view-employee-content {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 620px;
+    max-height: 90vh;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 20px 60px rgba(15, 23, 42, 0.2);
+    border-radius: 16px;
+    overflow-y: auto;
+    animation: viewModalAppear 0.2s ease;
+}
+
+@keyframes viewModalAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.view-employee-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.view-employee-header h2 {
+    color: #111827;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.view-employee-header p {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 2px 0 0;
+}
+
+.view-close-btn {
+    background-color: #f3f4f6;
+    color: #374151;
+    font-size: 25px;
+    border: none;
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.view-close-btn:hover {
+    background-color: #e5e7eb;
+}
+
+.view-employee-profile {
+    background-color: #f9fafb;
+    padding: 24px;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.view-profile-avatar {
+    background-color: #e0e7ff;
+    color: #4338ca;
+    font-size: 25px;
+    font-weight: 700;
+    width: 62px;
+    height: 62px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.view-employee-profile h3 {
+    color: #111827;
+    font-size: 19px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    margin: 0;
+}
+
+.view-employee-profile p {
+    color: #6b7280;
+    font-size: 13px;
+    margin: 5px 0 10px;
+}
+
+.view-status-badge {
+    background-color: #dcfce7;
+    color: #166534;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.view-status-badge.inactive {
+    background-color: #fee2e2;
+    color: #991b1b;
+}
+
+.view-employee-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+    padding: 10px 24px;
+}
+
+.view-detail-item {
+    min-width: 0;
+    padding: 16px 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.view-detail-item span {
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 500;
+    margin-bottom: 7px;
+    display: block;
+}
+
+.view-detail-item p {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.view-employee-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding: 16px 24px 24px;
+}
+
+.view-done-btn {
+    background-color: #4f46e5;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    min-width: 95px;
+    transition: background 0.2s ease;
+}
+
+.view-done-btn:hover {
+    background-color: #4338ca;
+}
+
+@media (max-width: 480px) {
+    .view-employee-modal {
+        padding: 12px;
+    }
+    .view-employee-header, .view-employee-profile {
+        padding: 18px;
+    }
+    .view-employee-details {
+        grid-template-columns: minmax(0, 1fr);
+        padding: 8px 18px;
+    }
+    .view-employee-content {
+        max-height: 94vh;
+    }
+    .view-employee-footer {
+        padding: 14px 18px 18px;
+    }
 }

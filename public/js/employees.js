@@ -232,20 +232,26 @@ function empDataTable(data) {
             </td>
             <td>
                 <div class="action-buttons">
-                    <a href="/employees" class="action-btn" title="View">
+                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="${employee.empID}">
                         <i class="fa-regular fa-eye"></i>
-                    </a>
-                    <a href="/employees" class="action-btn" title="Edit">
+                    </button>
+                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="${employee.empID}">
                         <i class="fa-regular fa-pen-to-square"></i>
-                    </a>
+                    </button>
                     <div class="more-action">
                         <button type="button" class="action-btn" title="More">
                             <i class="fa-solid fa-ellipsis"></i>
                         </button>
                         <div class="action-menu">
-                            <a href="/employees"><i class="fa-regular fa-eye"></i>View</a>
-                            <a href="/employees"><i class="fa-regular fa-pen-to-square"></i>Edit</a>
-                            <button type="button" class="delete-action" data-empid="${employee.empID}"><i class="fa-regular fa-trash-can"></i>Delete</button>
+                            <button type="button" class="view-employee-btn" data-empid="${employee.empID}">
+                                <i class="fa-regular fa-eye"></i>View
+                            </button>
+                            <button type="button" class="edit-employee-btn" data-empid="${employee.empID}">
+                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                            </button>
+                            <button type="button" class="delete-action" data-empid="${employee.empID}">
+                                <i class="fa-regular fa-trash-can"></i>Delete
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -502,3 +508,220 @@ deleteModal.addEventListener("click", function (e) {
 });
 
 renderEmployees();
+
+// Update Employee Details
+let editEmployeeModal = document.querySelector("#editEmployeeModal");
+let editEmployeeForm = document.querySelector("#editEmployeeForm");
+let closeEditModal = document.querySelector("#closeEditModal");
+let cancelEditEmployee = document.querySelector("#cancelEditEmployee");
+
+let editEmpID = document.querySelector("#editEmpID");
+let editEmpName = document.querySelector("#editEmpName");
+let editEmpEmail = document.querySelector("#editEmpEmail");
+let editEmpDepartment = document.querySelector("#editEmpDepartment");
+let editEmpPosition = document.querySelector("#editEmpPosition");
+let editEmpSalary = document.querySelector("#editEmpSalary");
+let editEmpJoined = document.querySelector("#editEmpJoined");
+let editEmpStatus = document.querySelector("#editEmpStatus");
+
+function openEditEmployee(empID) {
+    let employee = stat.find(emp => emp.empID === empID);
+    if (!employee) {
+        alert("Employee not found.");
+        return;
+    }
+
+    editEmpID.value = employee.empID;
+    editEmpName.value = employee.empName;
+    editEmpEmail.value = employee.empEmail;
+    editEmpDepartment.value = employee.empDepartment;
+    
+    if (![...editEmpDepartment.options].some(
+        option => option.value === employee.empDepartment
+    )) {
+        let option = new Option(
+            employee.empDepartment,
+            employee.empDepartment
+        );
+        editEmpDepartment.add(option);
+    }
+
+    editEmpPosition.value = employee.empPosition;
+    editEmpSalary.value = employee.empSalary;
+    editEmpJoined.value = employee.empJoined;
+    editEmpStatus.value = employee.empStatus;
+    
+    editEmployeeModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+    editEmpName.focus();
+}
+
+function closeEmployeeEditModal() {
+    editEmployeeModal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+closeEditModal.addEventListener("click", closeEmployeeEditModal);
+cancelEditEmployee.addEventListener("click", closeEmployeeEditModal);
+
+document.addEventListener("click", (event) => {
+    let editButton = event.target.closest(".edit-employee-btn");
+    if (!editButton) {
+        return;
+    }
+    let empID = editButton.dataset.empid;
+    if (empID) {
+        openEditEmployee(empID);
+    }
+});
+
+editEmployeeModal.addEventListener("click", (event) => {
+    if (event.target === editEmployeeModal) {
+        closeEmployeeEditModal();
+    }
+});
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && editEmployeeModal.classList.contains("show")) {
+        closeEmployeeEditModal();
+    }
+});
+
+editEmployeeForm.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let empID = editEmpID.value;
+    let employeeIndex = stat.findIndex(employee =>
+        employee.empID === empID
+    );
+    if (employeeIndex === -1) {
+        alert("Employee not found. Please refresh the page.");
+        return;
+    }
+
+    updatedName = editEmpName.value.trim();
+    updatedEmail = editEmpEmail.value.trim();
+    updatedDepartment = editEmpDepartment.value;
+    updatedPosition = editEmpPosition.value.trim();
+    updatedSalary = Number(editEmpSalary.value);
+    updatedJoined = editEmpJoined.value;
+    updatedStatus = editEmpStatus.value;
+    
+    if (!updatedName || !updatedEmail || !updatedDepartment || !updatedPosition || !updatedJoined || !["Active", "Inactive"].includes(updatedStatus)) {
+        alert("Please fill in all required fields.");
+        return;
+    }
+    if (!Number.isFinite(updatedSalary) || updatedSalary < 0) { 
+        alert("Please enter a valid salary.");
+        return;
+    }
+    if (!Number.isFinite(Date.parse(updatedJoined))) {
+        alert("Please select a valid joining date.");
+        return;
+    }
+    stat[employeeIndex] = {
+        ...stat[employeeIndex],
+        empName: updatedName,
+        empEmail: updatedEmail,
+        empDepartment: updatedDepartment,
+        empPosition: updatedPosition,
+        empSalary: updatedSalary,
+        empJoined: updatedJoined,
+        empStatus: updatedStatus
+    };
+    try {
+        localStorage.setItem("empData", JSON.stringify(stat));
+    } catch (error) {
+        alert("Unable to save changes in this browser.");
+        return;
+    }
+    updateStats();
+    renderEmployees();
+    closeEmployeeEditModal();
+    alert("Employee information updated successfully!");
+});
+
+// View Employee Details
+let viewEmployeeModal = document.getElementById("viewEmployeeModal");
+let closeViewModalBtn = document.getElementById("closeViewModal");
+let doneViewEmployeeBtn = document.getElementById("doneViewEmployee");
+
+function openViewEmployee(empID) {
+    let employee = stat.find(emp =>
+        String(emp.empID) === String(empID)
+    );
+    if (!employee) {
+        alert("Employee information not found.");
+        return;
+    }
+    
+    let viewEmpAvatar = document.getElementById("viewEmpAvatar");
+    let viewEmpName = document.getElementById("viewEmpName");
+    let viewEmpPosition = document.getElementById("viewEmpPosition");
+    let viewEmpID = document.getElementById("viewEmpID");
+    let viewEmpFullName = document.getElementById("viewEmpFullName");
+    let viewEmpEmail = document.getElementById("viewEmpEmail");
+    let viewEmpDepartment = document.getElementById("viewEmpDepartment");
+    let viewEmpJobPosition = document.getElementById("viewEmpJobPosition");
+    let viewEmpSalary = document.getElementById("viewEmpSalary");
+    let viewEmpJoined = document.getElementById("viewEmpJoined");
+    let statusBadge = document.getElementById("viewEmpStatus");
+
+    viewEmpAvatar.textContent = (employee.empName || "E").trim().charAt(0).toUpperCase();
+    viewEmpName.textContent = employee.empName || "Not provided";
+    viewEmpPosition.textContent = employee.empPosition || "Not provided";
+    viewEmpID.textContent = employee.empID || "—";
+    viewEmpFullName.textContent = employee.empName || "Not provided";
+    viewEmpEmail.textContent = employee.empEmail || "Not provided";
+    viewEmpDepartment.textContent = employee.empDepartment || "Not provided";
+    viewEmpJobPosition.textContent = employee.empPosition || "Not provided";
+    viewEmpSalary.textContent =
+        employee.empSalary !== undefined &&
+        employee.empSalary !== null &&
+        employee.empSalary !== ""
+        ? "₹" + Number(employee.empSalary).toLocaleString("en-IN") : "Not provided";
+
+    let joiningDate = employee.empJoined || "Not provided";
+    if (employee.empJoined) {
+        let parsedDate = new Date(employee.empJoined);
+        if (!Number.isNaN(parsedDate.getTime())) {
+            joiningDate = parsedDate.toLocaleDateString("en-IN", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric"
+            });
+        }
+    }
+    viewEmpJoined.textContent = joiningDate;
+
+    let status = employee.empStatus || "Active";
+    statusBadge.textContent = status;
+    statusBadge.classList.toggle("inactive", status.toLowerCase() !== "active");
+
+    viewEmployeeModal.classList.add("show");
+    document.body.style.overflow = "hidden";
+}
+
+function closeViewEmployeeModal() {
+    viewEmployeeModal.classList.remove("show");
+    document.body.style.overflow = "";
+}
+closeViewModalBtn.addEventListener("click", closeViewEmployeeModal);
+doneViewEmployeeBtn.addEventListener("click", closeViewEmployeeModal);
+
+document.addEventListener("click", function (event) {
+    const viewButton = event.target.closest(".view-employee-btn");
+    if (viewButton) {
+        event.preventDefault();
+        openViewEmployee(viewButton.dataset.empid);
+    }
+});
+
+viewEmployeeModal.addEventListener("click", function (event) {
+    if (event.target === viewEmployeeModal) {
+        closeViewEmployeeModal();
+    }
+});
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && viewEmployeeModal.classList.contains("show")) {
+        closeViewEmployeeModal();
+    }
+});

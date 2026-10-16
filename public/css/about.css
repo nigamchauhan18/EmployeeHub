@@ -16,7 +16,7 @@
     grid-template-columns: 1fr 0.9fr;
     align-items: center;
     gap: 55px;
-    padding: 35px 0 65px;
+    padding: 20px 0 20px;
 }
 
 .about-hero-content {
@@ -249,7 +249,7 @@
 }
 
 .progress-fill {
-    width: 0;
+    width: 80%;
     height: 100%;
     border-radius: inherit;
     background: rgb(79, 70, 229);
@@ -355,7 +355,7 @@
 }
 
 .about-intro {
-    padding: 65px 0;
+    padding: 45px 0;
     border-top: 1px solid rgb(234, 235, 240);
 }
 
@@ -472,7 +472,7 @@
 }
 
 .features-section {
-    padding: 80px 0;
+    padding: 65px 0;
 }
 
 .features-grid {
@@ -565,7 +565,7 @@
 }
 
 .how-section {
-    padding: 65px 0;
+    padding: 55px 0;
     border-top: 1px solid rgb(234, 235, 240);
 }
 
@@ -623,11 +623,11 @@
     grid-template-columns: 0.9fr 1.1fr;
     gap: 70px;
     align-items: center;
-    padding: 80px 0;
+    padding: 50px 0;
 }
 
 .benefits-visual {
-    padding: 25px;
+    padding: 10px;
     border-radius: 14px;
     background: rgb(247, 247, 252);
 }
@@ -812,7 +812,7 @@
 @media (max-width: 900px) {
     .about-hero {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 20px;
     }
 
     .about-hero-content {
@@ -826,7 +826,7 @@
     .intro-content,
     .benefits-section {
         grid-template-columns: 1fr;
-        gap: 35px;
+        gap: 25px;
     }
 
     .features-grid,
@@ -837,12 +837,12 @@
 
 @media (max-width: 650px) {
     .about-page {
-        max-width: calc(100% - 28px);
+        max-width: calc(100% - 0px);
         padding-top: 25px;
     }
 
     .about-hero {
-        padding-top: 15px;
+        padding-top: 25px;
     }
 
     .about-hero h1 {
@@ -905,7 +905,7 @@
 
 @media (max-width: 450px) {
     .about-page {
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 0px);
     }
 
     .about-hero h1 {

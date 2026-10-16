@@ -437,7 +437,7 @@ body {
     align-items: center;
     justify-content: center;
 
-    --progress: 0%; 
+    --progress: 80%; 
     background:
         radial-gradient(circle, rgb(255, 255, 255) 58%, transparent 59%),
         conic-gradient(
@@ -736,4 +736,642 @@ body {
 .nav-links a.dashboardNav {
     color: #4f46e5;
     background: #eef2ff;
+}
+
+html {
+    width: 100%;
+    min-width: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.dashboard-page {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+}
+
+.dashboard-stats > *,
+.quick-actions > *,
+.dashboard-main-grid > *,
+.dashboard-bottom-grid > * {
+    min-width: 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .dashboard-page {
+        max-width: 100%;
+        padding: 30px 22px 35px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .dashboard-bottom-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+
+    .status-overview {
+        justify-content: flex-start;
+        gap: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dashboard-page {
+        padding: 25px 18px 30px;
+    }
+
+    .dashboard-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 18px;
+        margin-bottom: 24px;
+    }
+
+    .header-content {
+        width: 100%;
+    }
+
+    .title-row h1 {
+        font-size: 25px;
+    }
+
+    .title-row p {
+        font-size: 12px;
+    }
+
+    .dashboard-date {
+        align-self: flex-start;
+        min-width: 175px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .dashboard-stat-card {
+        padding: 16px;
+        min-height: 135px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 25px;
+    }
+
+    .payroll-value {
+        font-size: 21px;
+    }
+
+    .stat-label {
+        font-size: 9px;
+        letter-spacing: 0.4px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .quick-action-card {
+        padding: 12px;
+        gap: 9px;
+        min-height: 72px;
+    }
+
+    .quick-action-icon {
+        width: 34px;
+        height: 34px;
+        font-size: 13px;
+    }
+
+    .quick-action-card strong {
+        font-size: 11px;
+    }
+
+    .quick-action-card span {
+        font-size: 9px;
+    }
+
+    .action-arrow {
+        font-size: 10px;
+    }
+
+    .dashboard-main-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .dashboard-bottom-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .dashboard-section {
+        margin-bottom: 45px;
+    }
+
+    .section-heading {
+        margin-bottom: 12px;
+    }
+
+    .section-heading h2,
+    .panel-header h2 {
+        font-size: 16px;
+    }
+
+    .panel-header {
+        padding: 14px 16px;
+        min-height: 62px;
+        gap: 12px;
+    }
+
+    .department-list {
+        padding: 12px 16px;
+    }
+
+    .department-item {
+        grid-template-columns: minmax(90px, 125px) minmax(40px, 1fr) 30px;
+        gap: 10px;
+        min-height: 45px;
+    }
+
+    .department-name {
+        font-size: 10px;
+    }
+
+    .status-overview {
+        gap: 20px;
+        padding: 18px;
+        min-height: 175px;
+    }
+
+    .status-circle-wrapper {
+        width: 125px;
+        flex-shrink: 0;
+    }
+
+    .status-circle {
+        width: 115px;
+        height: 115px;
+    }
+
+    .status-circle strong {
+        font-size: 20px;
+    }
+
+    .status-detail-label {
+        font-size: 10px;
+    }
+
+    .status-detail-row strong {
+        font-size: 11px;
+    }
+
+    .recent-table-wrapper {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .recent-table {
+        min-width: 650px;
+    }
+
+    .recent-table th {
+        padding: 0 14px;
+    }
+
+    .recent-table td {
+        padding: 8px 14px;
+    }
+
+    .payroll-summary {
+        padding: 18px;
+    }
+
+    .payroll-total strong {
+        font-size: 23px;
+    }
+
+    .activity-list {
+        padding: 8px 16px 12px;
+    }
+
+    .activity-item {
+        gap: 9px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dashboard-page {
+        padding: 39px 22px 25px;
+    }
+
+    .page-breadcrumb {
+        gap: 7px;
+        font-size: 11px;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+    }
+
+    .dashboard-header {
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .title-row h1 {
+        font-size: 23px;
+        letter-spacing: -0.4px;
+    }
+
+    .title-row p {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .dashboard-date {
+        width: 100%;
+        max-width: 220px;
+        min-width: 0;
+        padding: 10px 12px;
+    }
+
+    .date-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .dashboard-stats {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 10px;
+        margin-bottom: 45px;
+    }
+
+    .dashboard-stat-card {
+        padding: 13px 11px;
+        min-height: 125px;
+        border-radius: 10px;
+    }
+
+    .dashboard-stat-icon {
+        width: 32px;
+        height: 32px;
+        font-size: 13px;
+        border-radius: 8px;
+    }
+
+    .stat-label {
+        font-size: 8px;
+        letter-spacing: 0.3px;
+        line-height: 1.5;
+    }
+
+    .dashboard-stat-value {
+        font-size: 23px;
+        margin-top: 13px;
+        overflow-wrap: anywhere;
+    }
+
+    .payroll-value {
+        font-size: 18px;
+    }
+
+    .dashboard-stat-bottom {
+        margin-top: 11px;
+        gap: 5px;
+        flex-wrap: wrap;
+    }
+
+    .stat-description {
+        font-size: 9px;
+        gap: 4px;
+    }
+
+    .section-label {
+        font-size: 8px;
+    }
+
+    .section-heading h2,
+    .panel-header h2 {
+        font-size: 15px;
+    }
+
+    .quick-actions {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 9px;
+    }
+
+    .quick-action-card {
+        min-width: 0;
+        padding: 11px 9px;
+        gap: 8px;
+        min-height: 70px;
+        border-radius: 9px;
+    }
+
+    .quick-action-icon {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .quick-action-card > div:nth-child(2) {
+        gap: 4px;
+    }
+
+    .quick-action-card strong {
+        font-size: 10px;
+        line-height: 1.4;
+    }
+
+    .quick-action-card span {
+        font-size: 9px;
+    }
+
+    .action-arrow {
+        display: none;
+    }
+
+    .dashboard-panel {
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .panel-header {
+        padding: 13px;
+        min-height: 58px;
+        flex-wrap: wrap;
+    }
+
+    .panel-link {
+        font-size: 9px;
+    }
+
+    .department-list {
+        padding: 10px 12px;
+    }
+
+    .department-item {
+        grid-template-columns: minmax(75px, 1fr) minmax(35px, 1fr) 25px;
+        gap: 8px;
+        min-height: 43px;
+    }
+
+    .department-name {
+        gap: 6px;
+        font-size: 9px;
+        overflow-wrap: anywhere;
+    }
+
+    .department-dot {
+        width: 6px;
+        height: 6px;
+    }
+
+    .department-progress {
+        height: 5px;
+    }
+
+    .department-count {
+        font-size: 10px;
+    }
+
+    .status-overview {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+        padding: 18px 14px;
+    }
+
+    .status-circle-wrapper {
+        width: 100%;
+    }
+
+    .status-circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    .status-details {
+        width: 100%;
+    }
+
+    .status-detail-row {
+        padding: 10px 0;
+    }
+
+    .recent-table {
+        min-width: 620px;
+    }
+
+    .recent-table th {
+        padding: 0 12px;
+        font-size: 8px;
+    }
+
+    .recent-table td {
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+
+    .recent-avatar {
+        width: 29px;
+        height: 29px;
+        font-size: 9px;
+    }
+
+    .recent-employee {
+        gap: 8px;
+    }
+
+    .recent-employee-info strong {
+        font-size: 10px;
+    }
+
+    .payroll-summary {
+        padding: 16px 14px;
+    }
+
+    .payroll-total {
+        padding-bottom: 15px;
+    }
+
+    .payroll-total strong {
+        font-size: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    .payroll-info {
+        gap: 10px;
+        padding-top: 15px;
+    }
+
+    .payroll-info > div + div {
+        padding-left: 12px;
+    }
+
+    .payroll-info span {
+        font-size: 9px;
+        line-height: 1.5;
+    }
+
+    .payroll-info strong {
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    .activity-list {
+        padding: 6px 13px 10px;
+    }
+
+    .activity-item {
+        min-height: 55px;
+        gap: 8px;
+    }
+
+    .activity-icon {
+        width: 28px;
+        height: 28px;
+        font-size: 10px;
+    }
+
+    .activity-item strong {
+        font-size: 9px;
+    }
+
+    .activity-item span {
+        font-size: 8px;
+    }
+
+    .activity-item small {
+        font-size: 8px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .dashboard-page {
+        padding: 18px 10px 22px;
+    }
+
+    .title-row h1 {
+        font-size: 21px;
+    }
+
+    .dashboard-stats {
+        gap: 8px;
+    }
+
+    .dashboard-stat-card {
+        padding: 11px 9px;
+        min-height: 120px;
+    }
+
+    .dashboard-stat-value {
+        font-size: 21px;
+    }
+
+    .payroll-value {
+        font-size: 16px;
+    }
+
+    .stat-description {
+        font-size: 8px;
+    }
+
+    .quick-actions {
+        gap: 8px;
+    }
+
+    .quick-action-card {
+        padding: 10px 8px;
+        gap: 7px;
+    }
+
+    .quick-action-icon {
+        width: 27px;
+        height: 27px;
+        font-size: 11px;
+    }
+
+    .quick-action-card strong {
+        font-size: 9px;
+    }
+
+    .quick-action-card span {
+        font-size: 8px;
+    }
+
+    .department-item {
+        grid-template-columns: minmax(65px, 1fr) minmax(25px, 1fr) 22px;
+        gap: 6px;
+    }
+
+    .department-name {
+        font-size: 8px;
+    }
+
+    .department-count {
+        font-size: 9px;
+    }
+
+    .payroll-summary {
+        padding: 14px 12px;
+    }
+
+    .payroll-total strong {
+        font-size: 20px;
+    }
+
+    .payroll-info > div + div {
+        padding-left: 9px;
+    }
+
+    .payroll-info strong {
+        font-size: 10px;
+    }
+
+    .activity-item {
+        gap: 7px;
+    }
+
+    .activity-item small {
+        font-size: 7px;
+    }
+}
+
+@media (hover: none) {
+    .dashboard-stat-card:hover,
+    .quick-action-card:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dashboard-stat-card,
+    .quick-action-card,
+    .department-progress-bar,
+    .action-arrow {
+        transition: none;
+    }
 }

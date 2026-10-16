@@ -1,4 +1,4 @@
-let employees = JSON.parse(localStorage.getItem('empData')) || [];
+let employees = JSON.parse(localStorage.getItem('empData'));
 
 let totalEmployees = document.querySelector("#totalEmployees");
 let activeEmployees = document.querySelector("#activeEmployees");

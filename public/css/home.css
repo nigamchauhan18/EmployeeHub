@@ -256,7 +256,7 @@
 
 .progress-bar div {
     background: linear-gradient(90deg, #4f46e5, #06b6d4);
-    width: 82%;
+    width: 80%;
     height: 100%;
     border-radius: 10px;
 }
@@ -790,7 +790,7 @@
     }
 
     .employee-card-main {
-        width: 245px;
+        width: 275px;
         max-width: 95%;
         padding: 16px;
     }
@@ -801,7 +801,7 @@
 
     .floating-card {
         right: -5px;
-        top: 5px;
+        top: 3px;
         padding: 7px 9px;
     }
 
@@ -811,8 +811,8 @@
     }
 
     .decorative-circle {
-        right: 5%;
-        bottom: 10px;
+        right: -1%;
+        bottom: -13px;
     }
 
     .features-section {

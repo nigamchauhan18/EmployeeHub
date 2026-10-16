@@ -1,53 +1,60 @@
 <nav class="navbar">
-    <div class="logo">
+    <a href="/" class="logo" aria-label="EmployeeHub Home">
         <div class="logo-box">EH</div>
         <div class="logo-text">
             <h2>Employee<span>Hub</span></h2>
             <p>Management System</p>
         </div>
-    </div>
-    <ul class="nav-links">
-        <li><a href="/" class="homeNav">Home</a></li>
-        <li><a href="/about" class="aboutNav">About</a></li>
-        <li><a href="/dashboard" class="dashboardNav">Dashboard</a></li>
-        <li><a href="/employees" class="employeesNav">Employees</a></li>
-        <li><a href="/contact" class="contactNav">Contact</a></li>
-    </ul>
-    <div class="navbar-auth">
-        <a href="/login" class="navbar-login" id="navbarLogin">
-            <i class="fa-solid fa-right-to-bracket"></i>
-            <span>Login</span>
-        </a>
-        <div class="admin-profile" id="userProfile" style="display: none;">
-            <button type="button" class="profile-button" id="profileButton" aria-expanded="false" aria-label="Open profile menu">
-                <div class="admin-avatar" id="userAvatar">U</div>
-                <div class="admin-info">
-                    <strong id="userName">User</strong>
-                    <span>Administrator</span>
-                </div>
-                <div class="profile-arrow">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </button>
-            <div class="profile-dropdown" id="profileDropdown">
-                <div class="dropdown-user">
-                    <div class="dropdown-avatar" id="dropdownAvatar">U</div>
-                    <div class="dropdown-user-info">
-                        <strong id="dropdownName">User</strong>
-                        <span id="dropdownEmail">No email available</span>
+    </a>
+    <button type="button" class="navbar-toggle" id="navbarToggle" aria-label="Open navigation menu" aria-controls="navbarMenu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+    <div class="navbar-menu" id="navbarMenu">
+        <ul class="nav-links">
+            <li><a href="/" class="homeNav">Home</a></li>
+            <li><a href="/about" class="aboutNav">About</a></li>
+            <li><a href="/dashboard" class="dashboardNav">Dashboard</a></li>
+            <li><a href="/employees" class="employeesNav">Employees</a></li>
+            <li><a href="/contact" class="contactNav">Contact</a></li>
+        </ul>
+        <div class="navbar-auth">
+            <a href="/login" class="navbar-login" id="navbarLogin">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                <span>Login</span>
+            </a>
+            <div class="admin-profile" id="userProfile" style="display: none;">
+                <button type="button" class="profile-button" id="profileButton" aria-expanded="false" aria-label="Open profile menu">
+                    <div class="admin-avatar" id="userAvatar">U</div>
+                    <div class="admin-info">
+                        <strong id="userName">User</strong>
+                        <span>Administrator</span>
                     </div>
-                </div>
-                <div class="dropdown-divider"></div>
-                <a href="/dashboard" class="dropdown-link">
-                    <i class="fa-solid fa-chart-pie"></i> Dashboard
-                </a>
-                <a href="/employees" class="dropdown-link">
-                    <i class="fa-solid fa-users"></i> Employees
-                </a>
-                <div class="dropdown-divider"></div>
-                <button type="button" class="logout-button" id="logoutButton">
-                    <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    <div class="profile-arrow">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
                 </button>
+                <div class="profile-dropdown" id="profileDropdown">
+                    <div class="dropdown-user">
+                        <div class="dropdown-avatar" id="dropdownAvatar">U</div>
+                        <div class="dropdown-user-info">
+                            <strong id="dropdownName">User</strong>
+                            <span id="dropdownEmail">No email available</span>
+                        </div>
+                    </div>
+                    <div class="dropdown-divider"></div>
+                    <a href="/dashboard" class="dropdown-link">
+                        <i class="fa-solid fa-chart-pie"></i> Dashboard
+                    </a>
+                    <a href="/employees" class="dropdown-link">
+                        <i class="fa-solid fa-users"></i> Employees
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <button type="button" class="logout-button" id="logoutButton">
+                        <i class="fa-solid fa-right-from-bracket"></i> Logout
+                    </button>
+                </div>
             </div>
         </div>
     </div>

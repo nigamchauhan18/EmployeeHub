@@ -4,7 +4,16 @@
     box-sizing: border-box;
 }
 
+html {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
 body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
     font-family: 'Inter', sans-serif;
     background-color: rgb(247, 248, 252);
     color: rgb(30, 41, 59);
@@ -14,8 +23,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 45px 25px;
+    width: 100%;
+    min-width: 0;
     min-height: 100vh;
+    min-height: 100dvh;
+    padding: 45px 25px;
 }
 
 .login-wrapper {
@@ -23,7 +35,8 @@ body {
     box-shadow: 0 25px 70px rgba(30, 41, 59, 0.10);
     border: 1px solid rgb(232, 234, 240);
     border-radius: 22px;
-    width: 1050px;
+    width: 100%;
+    max-width: 1050px;
     min-height: 620px;
     display: grid;
     grid-template-columns: 46% 54%;
@@ -31,7 +44,12 @@ body {
 }
 
 .login-brand {
-    background: linear-gradient(145deg, rgb(67, 56, 202), rgb(79, 70, 229) 55%, rgb(99, 102, 241));
+    background: linear-gradient(
+        145deg,
+        rgb(67, 56, 202),
+        rgb(79, 70, 229) 55%,
+        rgb(99, 102, 241)
+    );
     color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
@@ -39,16 +57,23 @@ body {
     overflow: hidden;
 }
 
-/* .login-brand::before {
+.login-brand::before {
     content: "";
     position: absolute;
     inset: 0;
     opacity: 0.10;
     background-image:
-        linear-gradient(rgba(255,255,255,0.4) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.4) 1px, transparent 1px);
+        linear-gradient(
+            rgba(255, 255, 255, 0.4) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.4) 1px,
+            transparent 1px
+        );
     background-size: 32px 32px;
-} */
+}
 
 .brand-glow {
     position: absolute;
@@ -57,7 +82,7 @@ body {
 }
 
 .glow-one {
-    background-color: rgba(255,255,255,0.10);
+    background-color: rgba(255, 255, 255, 0.10);
     width: 220px;
     height: 220px;
     top: -100px;
@@ -65,7 +90,7 @@ body {
 }
 
 .glow-two {
-    background-color: rgba(6,182,212,0.18);
+    background-color: rgba(6, 182, 212, 0.18);
     width: 180px;
     height: 180px;
     bottom: -90px;
@@ -131,13 +156,13 @@ body {
 }
 
 .feature-icon {
-    background-color: rgba(255,255,255,0.10);
+    background-color: rgba(255, 255, 255, 0.10);
     color: rgb(165, 243, 252);
     font-size: 13px;
     width: 38px;
     height: 38px;
     border-radius: 10px;
-    border: 1px solid rgba(255,255,255,0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -163,7 +188,7 @@ body {
     font-size: 10px;
     padding-top: 20px;
     margin-top: 38px;
-    border-top: 1px solid rgba(255,255,255,0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
     display: flex;
     align-items: center;
     gap: 9px;
@@ -184,6 +209,7 @@ body {
 .login-card {
     width: 100%;
     max-width: 390px;
+    min-width: 0;
 }
 
 .login-logo {
@@ -194,7 +220,11 @@ body {
 }
 
 .logo-box {
-    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(99, 102, 241));
+    background: linear-gradient(
+        135deg,
+        rgb(79, 70, 229),
+        rgb(99, 102, 241)
+    );
     color: rgb(255, 255, 255);
     font-size: 12px;
     font-weight: 800;
@@ -204,6 +234,7 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 9px;
+    flex-shrink: 0;
 }
 
 .login-logo strong {
@@ -268,6 +299,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 10px;
 }
 
 .password-label a {
@@ -275,6 +307,7 @@ body {
     font-size: 8px;
     font-weight: 600;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 .login-input {
@@ -287,6 +320,7 @@ body {
     padding: 0 12px;
     border-radius: 8px;
     transition: 0.2s;
+    min-width: 0;
 }
 
 .login-input:focus-within {
@@ -298,6 +332,7 @@ body {
 .login-input > i {
     color: rgb(148, 163, 184);
     font-size: 13px;
+    flex-shrink: 0;
 }
 
 .login-input input {
@@ -305,6 +340,7 @@ body {
     outline: none;
     border: none;
     width: 100%;
+    min-width: 0;
     height: 100%;
     color: rgb(30, 41, 59);
     font-family: inherit;
@@ -321,6 +357,8 @@ body {
     color: rgb(148, 163, 184);
     font-size: 12px;
     cursor: pointer;
+    flex-shrink: 0;
+    padding: 4px;
 }
 
 .login-group small {
@@ -354,10 +392,15 @@ body {
     height: 13px;
     accent-color: rgb(79, 70, 229);
     cursor: pointer;
+    flex-shrink: 0;
 }
 
 .login-button {
-    background: linear-gradient(135deg, rgb(79, 70, 229), rgb(99, 102, 241));
+    background: linear-gradient(
+        135deg,
+        rgb(79, 70, 229),
+        rgb(99, 102, 241)
+    );
     color: rgb(255, 255, 255);
     font-size: 12px;
     font-weight: 600;
@@ -389,6 +432,7 @@ body {
     font-size: 10px;
     text-align: center;
     margin-top: 20px;
+    line-height: 1.7;
 }
 
 .signup-text a {
@@ -428,11 +472,13 @@ body {
     padding-top: 17px;
     color: rgb(161, 170, 184);
     font-size: 9px;
+    line-height: 1.6;
 }
 
 .security-note i {
     color: rgb(99, 102, 241);
     font-size: 9px;
+    flex-shrink: 0;
 }
 
 .success-toast {
@@ -445,6 +491,7 @@ body {
     right: 20px;
     bottom: 20px;
     width: 300px;
+    max-width: calc(100% - 24px);
     display: flex;
     align-items: center;
     gap: 12px;
@@ -452,7 +499,10 @@ body {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease,
+        visibility 0.25s ease;
 }
 
 .success-toast.show {
@@ -490,6 +540,7 @@ body {
 .toast-content span {
     color: rgb(148, 163, 184);
     font-size: 9px;
+    overflow-wrap: anywhere;
 }
 
 .toast-close {
@@ -510,6 +561,273 @@ body {
 }
 
 .toast-close:hover {
-    background-color: rgb(253, 44, 44);;
-    color: rgb(252, 220, 220);
+    background-color: rgb(253, 44, 44);
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width: 1100px) {
+    .login-page {
+        padding: 35px 24px;
+    }
+    .login-wrapper {
+        max-width: 950px;
+        grid-template-columns: 44% 56%;
+        min-height: 580px;
+    }
+    .brand-content {
+        padding: 40px 32px;
+    }
+    .brand-content h1 {
+        font-size: 30px;
+    }
+    .login-section {
+        padding: 35px;
+    }
+    .login-logo {
+        margin-bottom: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .login-brand {
+        display: none !important;
+    }
+    .login-page {
+        padding: 25px 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        min-height: auto;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 45px rgba(30, 41, 59, 0.08);
+    }
+    .login-section {
+        width: 100%;
+        min-width: 0;
+        padding: 38px 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-card {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    .login-logo {
+        margin-bottom: 30px;
+    }
+    .login-header {
+        margin-bottom: 25px;
+    }
+    .login-header h2 {
+        font-size: 20px;
+    }
+    .login-header p {
+        font-size: 10px;
+    }
+    .login-group label {
+        font-size: 11px;
+    }
+    .login-input {
+        height: 45px;
+    }
+    .login-input input {
+        font-size: 13px;
+    }
+    .password-label a {
+        font-size: 10px;
+    }
+    .login-button {
+        height: 45px;
+        font-size: 13px;
+    }
+    .signup-text {
+        font-size: 11px;
+    }
+    .back-link {
+        font-size: 11px;
+    }
+    .security-note {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-page {
+        padding: 16px 12px;
+        align-items: center;
+    }
+    .login-wrapper {
+        max-width: 100%;
+        border-radius: 14px;
+    }
+    .login-section {
+        padding: 30px 22px;
+    }
+    .login-logo {
+        gap: 10px;
+        margin-bottom: 28px;
+    }
+    .logo-box {
+        width: 38px;
+        height: 38px;
+    }
+    .login-logo strong {
+        font-size: 13px;
+    }
+    .login-logo span {
+        font-size: 9px;
+    }
+    .login-header {
+        gap: 12px;
+        margin-bottom: 24px;
+    }
+    .login-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 14px;
+    }
+    .login-header h2 {
+        font-size: 19px;
+    }
+    .login-header p {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+    .login-group {
+        margin-bottom: 17px;
+    }
+    .login-group label {
+        font-size: 11px;
+        margin-bottom: 8px;
+    }
+    .login-input {
+        height: 45px;
+        padding: 0 11px;
+        gap: 9px;
+    }
+    .login-input > i {
+        font-size: 12px;
+    }
+    .login-input input {
+        font-size: 13px;
+    }
+    .password-toggle {
+        padding: 5px;
+    }
+    .password-label a {
+        font-size: 9px;
+    }
+    .login-group small {
+        font-size: 10px;
+    }
+    .remember-me {
+        font-size: 10px;
+    }
+    .login-button {
+        height: 45px;
+        font-size: 12px;
+    }
+    .signup-text {
+        font-size: 10px;
+        line-height: 1.7;
+        margin-top: 19px;
+    }
+    .back-link {
+        font-size: 10px;
+    }
+    .security-note {
+        font-size: 9px;
+        line-height: 1.6;
+        padding-top: 14px;
+        margin-top: 16px;
+        text-align: center;
+    }
+    .success-toast {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        width: auto;
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 12px;
+        gap: 10px;
+    }
+    .toast-content strong {
+        font-size: 11px;
+    }
+    .toast-content span {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 350px) {
+    .login-page {
+        padding: 12px 8px;
+    }
+    .login-section {
+        padding: 26px 16px;
+    }
+    .login-header {
+        gap: 9px;
+    }
+    .login-header h2 {
+        font-size: 17px;
+    }
+    .login-header p {
+        font-size: 9px;
+    }
+    .login-input {
+        padding: 0 9px;
+        gap: 7px;
+    }
+    .login-input input {
+        font-size: 12px;
+    }
+    .password-label a {
+        font-size: 8px;
+    }
+    .security-note {
+        align-items: flex-start;
+    }
+    .success-toast {
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+    }
+}
+
+@media (max-height: 650px) and (min-width: 769px) {
+    .login-page {
+        align-items: flex-start;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    .login-wrapper {
+        min-height: auto;
+    }
+    .brand-content {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    .login-section {
+        padding-top: 28px;
+        padding-bottom: 28px;
+    }
+    .login-logo {
+        margin-bottom: 20px;
+    }
+    .login-header {
+        margin-bottom: 20px;
+    }
+    .login-group {
+        margin-bottom: 13px;
+    }
 }

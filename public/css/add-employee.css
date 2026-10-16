@@ -386,3 +386,445 @@ body {
     background-color: rgb(253, 44, 44);;
     color: rgb(252, 220, 220);
 }
+
+html {
+    width: 100%;
+    min-width: 0;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.add-employee-page {
+    width: 100%;
+    max-width: 1120px;
+    min-width: 0;
+    margin: 0 auto;
+}
+
+.add-employee-header > *,
+.title-row > *,
+.form-card-header > *,
+.section-heading > *,
+.form-grid > * {
+    min-width: 0;
+}
+
+@media screen and (max-width: 1024px) {
+    .add-employee-page {
+        padding: 30px 22px 35px;
+    }
+
+    .add-employee-header {
+        gap: 20px;
+    }
+
+    .form-section {
+        padding: 23px 22px;
+    }
+
+    .form-card-header {
+        padding: 20px 22px;
+    }
+
+    .form-actions {
+        padding: 18px 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .add-employee-page {
+        padding: 25px 18px 30px;
+    }
+
+    .add-employee-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 18px;
+        margin-bottom: 22px;
+    }
+
+    .page-breadcrumb {
+        margin-bottom: 13px;
+        flex-wrap: wrap;
+        gap: 7px;
+        font-size: 10px;
+    }
+
+    .title-row {
+        gap: 11px;
+    }
+
+    .title-icon {
+        width: 40px;
+        height: 40px;
+        flex-shrink: 0;
+        font-size: 15px;
+    }
+
+    .title-row h1 {
+        font-size: 22px;
+    }
+
+    .title-row p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .back-btn {
+        height: 37px;
+    }
+
+    .employee-form-card {
+        border-radius: 11px;
+    }
+
+    .form-card-header {
+        padding: 19px 20px;
+        gap: 12px;
+    }
+
+    .form-card-header h2 {
+        font-size: 13px;
+    }
+
+    .form-card-header p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .required-note {
+        font-size: 9px;
+        flex-shrink: 0;
+    }
+
+    .form-section {
+        padding: 22px 20px;
+    }
+
+    .section-heading {
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .section-icon {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0;
+        font-size: 12px;
+    }
+
+    .section-heading h3 {
+        font-size: 12px;
+    }
+
+    .section-heading p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px 16px;
+    }
+
+    .form-group label {
+        font-size: 10px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select {
+        height: 40px;
+        font-size: 11px;
+    }
+
+    .form-actions {
+        padding: 18px 20px;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        height: 39px;
+    }
+
+    .success-toast {
+        right: 16px;
+        bottom: 16px;
+        max-width: calc(100% - 32px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .add-employee-page {
+        padding: 30px 15px 20px;
+    }
+
+    .add-employee-header {
+        gap: 16px;
+        margin-bottom: 19px;
+    }
+
+    .page-breadcrumb {
+        font-size: 10px;
+        margin-bottom: 12px;
+        gap: 6px;
+    }
+
+    .title-row {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .title-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 9px;
+        font-size: 14px;
+    }
+
+    .title-row h1 {
+        font-size: 20px;
+        line-height: 1.4;
+        letter-spacing: -0.4px;
+        margin-bottom: 4px;
+    }
+
+    .title-row p {
+        font-size: 10px;
+        line-height: 1.6;
+    }
+
+    .back-btn {
+        height: 36px;
+        padding: 0 12px;
+        font-size: 10px;
+    }
+
+    .employee-form-card {
+        border-radius: 10px;
+    }
+
+    .form-card-header {
+        padding: 17px 15px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-card-header h2 {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .form-card-header p {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .required-note {
+        font-size: 9px;
+    }
+
+    .form-section {
+        padding: 20px 15px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        gap: 9px;
+        margin-bottom: 17px;
+    }
+
+    .section-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 7px;
+        font-size: 11px;
+    }
+
+    .section-heading h3 {
+        font-size: 11px;
+        line-height: 1.5;
+    }
+
+    .section-heading p {
+        font-size: 9px;
+        line-height: 1.6;
+    }
+
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .form-group {
+        min-width: 0;
+    }
+
+    .form-group label {
+        font-size: 10px;
+        margin-bottom: 7px;
+    }
+
+    .input-wrapper {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .input-wrapper > i {
+        left: 12px;
+        font-size: 12px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select {
+        width: 100%;
+        min-width: 0;
+        height: 42px;
+        padding-left: 35px;
+        padding-right: 10px;
+        font-size: 11px;
+        border-radius: 7px;
+    }
+
+    .error-message {
+        font-size: 9px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .form-actions {
+        padding: 15px;
+        gap: 9px;
+        flex-direction: column-reverse;
+        align-items: stretch;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        width: 100%;
+        height: 42px;
+        padding: 0 12px;
+        font-size: 11px;
+    }
+
+    .success-toast {
+        width: auto;
+        max-width: calc(100% - 26px);
+        left: 13px;
+        right: 13px;
+        bottom: 13px;
+        padding: 12px;
+        gap: 9px;
+    }
+
+    .toast-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .toast-content {
+        flex: 1;
+    }
+
+    .toast-content strong {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .toast-content span {
+        font-size: 9px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    .toast-close {
+        width: 26px;
+        height: 26px;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    .add-employee-page {
+        padding: 18px 10px 22px;
+    }
+
+    .title-icon {
+        width: 33px;
+        height: 33px;
+        font-size: 12px;
+    }
+
+    .title-row h1 {
+        font-size: 18px;
+    }
+
+    .title-row p {
+        font-size: 9px;
+    }
+
+    .form-card-header {
+        padding: 15px 12px;
+    }
+
+    .form-section {
+        padding: 18px 12px;
+    }
+
+    .section-heading {
+        gap: 8px;
+    }
+
+    .section-heading h3 {
+        font-size: 10px;
+    }
+
+    .section-heading p {
+        font-size: 8px;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select {
+        font-size: 10px;
+    }
+
+    .form-actions {
+        padding: 12px;
+    }
+
+    .cancel-btn,
+    .save-btn {
+        height: 40px;
+    }
+
+    .success-toast {
+        left: 10px;
+        right: 10px;
+        max-width: calc(100% - 20px);
+        bottom: 10px;
+    }
+}
+
+@media (hover: none) {
+    .back-btn:hover,
+    .cancel-btn:hover,
+    .save-btn:hover,
+    .toast-close:hover {
+        transform: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-btn,
+    .input-wrapper input,
+    .input-wrapper select,
+    .cancel-btn,
+    .save-btn,
+    .success-toast,
+    .toast-close {
+        transition: none;
+    }
+}

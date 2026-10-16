@@ -236,7 +236,7 @@ body {
 }
 
 .guides-section {
-    padding-bottom: 70px;
+    padding-bottom: 50px;
     border-bottom: 1px solid rgb(230, 232, 238);
 }
 
@@ -530,8 +530,8 @@ body {
 @media (max-width: 700px) {
     .help-page {
         max-width: calc(100% - 28px);
-        padding-top: 25px;
-        padding-bottom: 55px;
+        padding-top: 35px;
+        padding-bottom: 40px;
     }
 
     .help-hero {
@@ -607,7 +607,7 @@ body {
 
 @media (max-width: 450px) {
     .help-page {
-        max-width: calc(100% - 20px);
+        max-width: calc(100% - 0px);
     }
 
     .help-hero {

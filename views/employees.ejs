@@ -39,7 +39,7 @@
                     </div>
                     <span class="stat-label">TOTAL EMPLOYEES</span>
                 </div>
-                <div class="stat-value" id="totalEmployees">0</div>
+                <div class="stat-value" id="totalEmployees">10</div>
                 <div class="stat-bottom">
                     <span class="stat-description">
                         <i class="fa-solid fa-user-group"></i>
@@ -54,10 +54,10 @@
                     </div>
                     <span class="stat-label">ACTIVE</span>
                 </div>
-                <div class="stat-value" id="activeEmployees">0</div>
+                <div class="stat-value" id="activeEmployees">8</div>
                 <div class="stat-bottom">
                     <span class="status-dot active-dot"></span>
-                    <span class="stat-description" id="activePercentage">Currently working</span>
+                    <span class="stat-description" id="activePercentage">80% Currently working</span>
                 </div>
             </div>
             <div class="stat-card">
@@ -67,7 +67,7 @@
                     </div>
                     <span class="stat-label">INACTIVE</span>
                 </div>
-                <div class="stat-value" id="inactiveEmployees">0</div>
+                <div class="stat-value" id="inactiveEmployees">2</div>
                 <div class="stat-bottom">
                     <span class="status-dot inactive-dot"></span>
                     <span class="stat-description">Inactive or on leave</span>
@@ -80,7 +80,7 @@
                     </div>
                     <span class="stat-label">MONTHLY PAYROLL</span>
                 </div>
-                <div class="stat-value payroll-value" id="totalPayroll"><i class="fa-solid fa-indian-rupee-sign"></i>0</div>
+                <div class="stat-value payroll-value" id="totalPayroll"><i class="fa-solid fa-indian-rupee-sign"></i>7,38,800</div>
                 <div class="stat-bottom">
                     <span class="stat-description">
                         <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -97,7 +97,7 @@
                 </div>
                 <div class="directory-count">
                     <i class="fa-solid fa-database"></i>
-                    <span id="directoryCount">0 employee</span>
+                    <span id="directoryCount">10 employee</span>
                 </div>
             </div>
             <div class="filter-panel">
@@ -169,7 +169,7 @@
                 </button>
             </div>
             <div class="results-bar">
-                <div class="results-text">Showing <strong id="resultCount">0</strong> employees</div>
+                <div class="results-text">Showing <strong id="resultCount">10</strong> employees</div>
                 <div class="view-options">
                     <button class="view-btn active" id="listView" title="List View">
                         <i class="fa-solid fa-list"></i>
@@ -194,7 +194,7 @@
                         </tr>
                     </thead>
                     <tbody id="employeeTableBody">
-                        <!-- <tr>
+                        <tr>
                             <td>
                                 <div class="employee-cell">
                                     <div class="employee-avatar">NC</div>
@@ -207,7 +207,7 @@
                             <td><span class="employee-id">EMP-001</span></td>
                             <td><span class="department-badge">Development</span></td>
                             <td><span class="position-text">Frontend Developer</span></td>
-                            <td><span class="salary-text">45000</span></td>
+                            <td><span class="salary-text">₹45,000</span></td>
                             <td><span class="joined-text">1 Oct 2026</span></td>
                             <td>
                                 <span class="status-badge active">
@@ -215,25 +215,445 @@
                             </td>
                             <td>
                                 <div class="action-buttons">
-                                    <a href="/employees" class="action-btn" title="View">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
                                         <i class="fa-regular fa-eye"></i>
-                                    </a>
-                                    <a href="/employees" class="action-btn" title="Edit">
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
                                         <i class="fa-regular fa-pen-to-square"></i>
-                                    </a>
+                                    </button>
                                     <div class="more-action">
                                         <button type="button" class="action-btn" title="More">
                                             <i class="fa-solid fa-ellipsis"></i>
                                         </button>
                                         <div class="action-menu">
-                                            <a href="/employees"><i class="fa-regular fa-eye"></i>View</a>
-                                            <a href="/employees"><i class="fa-regular fa-pen-to-square"></i>Edit</a>
-                                            <button type="button" class="delete-action" id="deleteEmployee"><i class="fa-regular fa-trash-can"></i>Delete</button>
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
                             </td>
-                        </tr> -->
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">RS</div>
+                                    <div>
+                                        <div class="employee-name">Rahul Sharma</div>
+                                        <div class="employee-email">rahul@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-002</span></td>
+                            <td><span class="department-badge">Development</span></td>
+                            <td><span class="position-text">Backend Developer</span></td>
+                            <td><span class="salary-text">₹72,000</span></td>
+                            <td><span class="joined-text">15 Aug 2025</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">PS</div>
+                                    <div>
+                                        <div class="employee-name">Priya Singh</div>
+                                        <div class="employee-email">priya@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-003</span></td>
+                            <td><span class="department-badge">HR</span></td>
+                            <td><span class="position-text">HR Manager</span></td>
+                            <td><span class="salary-text">₹85,000</span></td>
+                            <td><span class="joined-text">20 May 2024</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">AV</div>
+                                    <div>
+                                        <div class="employee-name">Aman Verma</div>
+                                        <div class="employee-email">aman@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-004</span></td>
+                            <td><span class="department-badge">Marketing</span></td>
+                            <td><span class="position-text">Marketing Executive</span></td>
+                            <td><span class="salary-text">₹38,000</span></td>
+                            <td><span class="joined-text">10 Nov 2025</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">NG</div>
+                                    <div>
+                                        <div class="employee-name">Neha Gupta</div>
+                                        <div class="employee-email">neha@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-005</span></td>
+                            <td><span class="department-badge">Finance</span></td>
+                            <td><span class="position-text">Accountant</span></td>
+                            <td><span class="salary-text">₹65,000</span></td>
+                            <td><span class="joined-text">18 Mar 2025</span></td>
+                            <td>
+                                <span class="status-badge inactive">
+                                <i class="fa-solid fa-circle"></i>Inactive</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">AM</div>
+                                    <div>
+                                        <div class="employee-name">Arjun Mehta</div>
+                                        <div class="employee-email">arjun@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-006</span></td>
+                            <td><span class="department-badge">Development</span></td>
+                            <td><span class="position-text">Full Stack Developer</span></td>
+                            <td><span class="salary-text">₹1,10,000</span></td>
+                            <td><span class="joined-text">5 Dec 2023</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">AV</div>
+                                    <div>
+                                        <div class="employee-name">Anjali Verma</div>
+                                        <div class="employee-email">anjai@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-007</span></td>
+                            <td><span class="department-badge">Design</span></td>
+                            <td><span class="position-text">UI/UX Designer</span></td>
+                            <td><span class="salary-text">₹78,000</span></td>
+                            <td><span class="joined-text">15 Sep 2024</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">RK</div>
+                                    <div>
+                                        <div class="employee-name">Rohit Kumar</div>
+                                        <div class="employee-email">rohit@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-008</span></td>
+                            <td><span class="department-badge">Development</span></td>
+                            <td><span class="position-text">Senior Developer</span></td>
+                            <td><span class="salary-text">₹1,45,000</span></td>
+                            <td><span class="joined-text">20 Jun 2022</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">MC</div>
+                                    <div>
+                                        <div class="employee-name">Manu Chauhan</div>
+                                        <div class="employee-email">manuchauhan@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-009</span></td>
+                            <td><span class="department-badge">Design</span></td>
+                            <td><span class="position-text">UI/UX Designer</span></td>
+                            <td><span class="salary-text">₹45,400</span></td>
+                            <td><span class="joined-text">20 Jun 2022</span></td>
+                            <td>
+                                <span class="status-badge inactive">
+                                <i class="fa-solid fa-circle"></i>Inactive</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="employee-cell">
+                                    <div class="employee-avatar">JC</div>
+                                    <div>
+                                        <div class="employee-name">Jitu Chauhan</div>
+                                        <div class="employee-email">jituchauhan@gmail.com</div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><span class="employee-id">EMP-010</span></td>
+                            <td><span class="department-badge">Development</span></td>
+                            <td><span class="position-text">Senior Developer</span></td>
+                            <td><span class="salary-text">₹55,400</span></td>
+                            <td><span class="joined-text">25 Jul 2022</span></td>
+                            <td>
+                                <span class="status-badge active">
+                                <i class="fa-solid fa-circle"></i>Active</span>
+                            </td>
+                            <td>
+                                <div class="action-buttons">
+                                    <button type="button" class="action-btn view-employee-btn" title="View" data-empid="EMP-001">
+                                        <i class="fa-regular fa-eye"></i>
+                                    </button>
+                                    <button type="button" class="action-btn edit-employee-btn" title="Edit" data-empid="EMP-001">
+                                        <i class="fa-regular fa-pen-to-square"></i>
+                                    </button>
+                                    <div class="more-action">
+                                        <button type="button" class="action-btn" title="More">
+                                            <i class="fa-solid fa-ellipsis"></i>
+                                        </button>
+                                        <div class="action-menu">
+                                            <button type="button" class="view-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-eye"></i>View
+                                            </button>
+                                            <button type="button" class="edit-employee-btn" data-empid="EMP-001">
+                                                <i class="fa-regular fa-pen-to-square"></i>Edit
+                                            </button>
+                                            <button type="button" class="delete-action" data-empid="EMP-001">
+                                                <i class="fa-regular fa-trash-can"></i>Delete
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -280,7 +700,7 @@
                 <button type="button" id="emptyReset" class="empty-reset">Reset Filters</button>
             </div>
             <div class="table-footer">
-                <span id="tableInfo">Showing 0 employees</span>
+                <span id="tableInfo">Showing 10 employees</span>
             </div>
         </section>
     </main>
@@ -294,6 +714,128 @@
             <div class="delete-modal-actions">
                 <button type="button" class="cancel-delete" id="cancelDelete">Cancel</button>
                 <button type="button" class="confirm-delete" id="confirmDelete"><i class="fa-regular fa-trash-can"></i>Delete</button>
+            </div>
+        </div>
+    </div>
+    <!-- Edit Employee Modal -->
+    <div class="edit-modal-overlay" id="editEmployeeModal">
+        <div class="edit-modal">
+            <div class="edit-modal-header">
+                <div>
+                    <span class="edit-modal-label">EMPLOYEE MANAGEMENT</span>
+                    <h2>Edit Employee</h2>
+                    <p>Update the employee's information below.</p>
+                </div>
+                <button type="button" class="edit-modal-close" id="closeEditModal" aria-label="Close edit form">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <form id="editEmployeeForm">
+                <input type="hidden" id="editEmpID">
+                <div class="edit-form-grid">
+                    <div class="edit-form-group">
+                        <label for="editEmpName">Full Name</label>
+                        <input type="text" id="editEmpName" required maxlength="100" autocomplete="name">
+                    </div>
+                    <div class="edit-form-group">
+                        <label for="editEmpEmail">Email Address</label>
+                        <input type="email" id="editEmpEmail" required maxlength="254" autocomplete="email">
+                    </div>
+                    <div class="edit-form-group">
+                        <label for="editEmpDepartment">Department</label>
+                        <select id="editEmpDepartment" required>
+                            <option value="">Select Department</option>
+                            <option value="Development">Development</option>
+                            <option value="HR">HR</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Finance">Finance</option>
+                            <option value="Design">Design</option>
+                        </select>
+                    </div>
+                    <div class="edit-form-group">
+                        <label for="editEmpPosition">Position</label>
+                        <input type="text" id="editEmpPosition" required maxlength="100">
+                    </div>
+                    <div class="edit-form-group">
+                        <label for="editEmpSalary">Monthly Salary (₹)</label>
+                        <input type="number" id="editEmpSalary" required min="0" step="1">
+                    </div>
+                    <div class="edit-form-group">
+                        <label for="editEmpJoined">Joining Date</label>
+                        <input type="date" id="editEmpJoined" required>
+                    </div>
+                    <div class="edit-form-group edit-full-width">
+                        <label for="editEmpStatus">Employment Status</label>
+                        <select id="editEmpStatus" required>
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="edit-modal-actions">
+                    <button type="button" class="edit-cancel-btn" id="cancelEditEmployee">Cancel</button>
+                    <button type="submit" class="edit-save-btn">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- View Employee Modal -->
+    <div class="view-employee-modal" id="viewEmployeeModal">
+        <div class="view-employee-content">
+            <div class="view-employee-header">
+                <div>
+                    <h2>Employee Details</h2>
+                    <p>View complete employee information</p>
+                </div>
+                <button type="button" class="view-close-btn" id="closeViewModal" aria-label="Close employee details">
+                    &times;
+                </button>
+            </div>
+            <div class="view-employee-profile">
+                <div class="view-profile-avatar" id="viewEmpAvatar">E</div>
+                <div>
+                    <h3 id="viewEmpName">Employee Name</h3>
+                    <p id="viewEmpPosition">Employee Position</p>
+                    <span id="viewEmpStatus" class="view-status-badge">Active</span>
+                </div>
+            </div>
+            <div class="view-employee-details">    
+                <div class="view-detail-item">
+                    <span>Employee ID</span>
+                    <p id="viewEmpID">—</p>
+                </div>
+                <div class="view-detail-item">
+                    <span>Full Name</span>
+                    <p id="viewEmpFullName">—</p>
+                </div>
+                <div class="view-detail-item">
+                    <span>Email Address</span>
+                    <p id="viewEmpEmail">—</p>
+                </div>    
+                <div class="view-detail-item">
+                    <span>Department</span>
+                    <p id="viewEmpDepartment">—</p>
+                </div>
+                <div class="view-detail-item">
+                    <span>Position</span>
+                    <p id="viewEmpJobPosition">—</p>
+                </div>    
+                <div class="view-detail-item">
+                    <span>Salary</span>
+                    <p id="viewEmpSalary">—</p>
+                </div>
+                <div class="view-detail-item">
+                    <span>Joining Date</span>
+                    <p id="viewEmpJoined">—</p>
+                </div>
+            </div>
+            <div class="view-employee-footer">
+                <button type="button" class="view-done-btn" id="doneViewEmployee">
+                    Close
+                </button>
             </div>
         </div>
     </div>

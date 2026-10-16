@@ -48,7 +48,7 @@
                     </div>
                     <span class="stat-label">TOTAL EMPLOYEES</span>
                 </div>
-                <div class="dashboard-stat-value" id="totalEmployees">0</div>
+                <div class="dashboard-stat-value" id="totalEmployees">10</div>
                 <div class="dashboard-stat-bottom">
                     <span class="stat-description">
                         <i class="fa-solid fa-user-group"></i>
@@ -63,7 +63,7 @@
                     </div>
                     <span class="stat-label">ACTIVE EMPLOYEES</span>
                 </div>
-                <div class="dashboard-stat-value" id="activeEmployees">0</div>
+                <div class="dashboard-stat-value" id="activeEmployees">8</div>
                 <div class="dashboard-stat-bottom">
                     <span class="status-dot active-dot"></span>
                     <span class="stat-description" id="activePercentage">
@@ -78,7 +78,7 @@
                     </div>
                     <span class="stat-label">DEPARTMENTS</span>
                 </div>
-                <div class="dashboard-stat-value" id="departmentCount">0</div>
+                <div class="dashboard-stat-value" id="departmentCount">5</div>
                 <div class="dashboard-stat-bottom">
                     <span class="stat-description">
                         <i class="fa-solid fa-layer-group"></i>
@@ -93,7 +93,7 @@
                     </div>
                     <span class="stat-label">MONTHLY PAYROLL</span>
                 </div>
-                <div class="dashboard-stat-value payroll-value" id="totalPayroll">₹0</div>
+                <div class="dashboard-stat-value payroll-value" id="totalPayroll">₹7,38,800</div>
                 <div class="dashboard-stat-bottom">
                     <span class="stat-description">
                         <i class="fa-solid fa-indian-rupee-sign"></i>
@@ -166,7 +166,53 @@
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
-                <div class="department-list" id="departmentList"></div>
+                <div class="department-list" id="departmentList">
+                    <div class="department-item">
+                        <div class="department-name">
+                            <span class="department-dot"></span>Development
+                        </div>
+                        <div class="department-progress">
+                            <div class="department-progress-bar" style="width: 50%"></div>
+                        </div>
+                        <div class="department-count">5</div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-name">
+                            <span class="department-dot"></span>Design
+                        </div>
+                        <div class="department-progress">
+                            <div class="department-progress-bar" style="width: 20%"></div>
+                        </div>
+                        <div class="department-count">2</div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-name">
+                            <span class="department-dot"></span>HR
+                        </div>
+                        <div class="department-progress">
+                            <div class="department-progress-bar" style="width: 10%"></div>
+                        </div>
+                        <div class="department-count">1</div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-name">
+                            <span class="department-dot"></span>Marketing
+                        </div>
+                        <div class="department-progress">
+                            <div class="department-progress-bar" style="width: 10%"></div>
+                        </div>
+                        <div class="department-count">1</div>
+                    </div>
+                    <div class="department-item">
+                        <div class="department-name">
+                            <span class="department-dot"></span>Finance
+                        </div>
+                        <div class="department-progress">
+                            <div class="department-progress-bar" style="width: 10%"></div>
+                        </div>
+                        <div class="department-count">1</div>
+                    </div>
+                </div>
             </div>
             <div class="dashboard-panel status-panel">
                 <div class="panel-header">
@@ -179,7 +225,7 @@
                     <div class="status-circle-wrapper">
                         <div class="status-circle">
                             <div>
-                                <strong id="statusPercentage">0%</strong>
+                                <strong id="statusPercentage">80%</strong>
                                 <span>Active</span>
                             </div>
                         </div>
@@ -190,21 +236,21 @@
                                 <span class="status-dot active-dot"></span>
                                 <span>Active</span>
                             </div>
-                            <strong id="statusActive">0</strong>
+                            <strong id="statusActive">8</strong>
                         </div>
                         <div class="status-detail-row">
                             <div class="status-detail-label">
                                 <span class="status-dot inactive-dot"></span>
                                 <span>Inactive</span>
                             </div>
-                            <strong id="statusInactive">0</strong>
+                            <strong id="statusInactive">2</strong>
                         </div>
                         <div class="status-detail-row total-row">
                             <div class="status-detail-label">
                                 <i class="fa-solid fa-users"></i>
                                 <span>Total</span>
                             </div>
-                            <strong id="statusTotal">0</strong>
+                            <strong id="statusTotal">10</strong>
                         </div>
                     </div>
                 </div>
@@ -233,7 +279,133 @@
                             <th>STATUS</th>
                         </tr>
                     </thead>
-                    <tbody id="recentEmployeeBody"></tbody>
+                    <tbody id="recentEmployeeBody">
+                        <tr>
+                            <td>
+                                <div class="recent-employee">
+                                    <div class="recent-avatar">NC</div>
+                                    <div class="recent-employee-info">
+                                        <strong>Nigam Chauhan</strong>
+                                        <span>nigamchauhan@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="recent-department">Development</span>
+                            </td>
+                            <td>
+                                <span class="recent-position">Frontend Developer</span>
+                            </td>
+                            <td>
+                                <span class="recent-date">1 Oct 2026</span>
+                            </td>
+                            <td>
+                                <span class="recent-status active">
+                                    <i class="fa-solid fa-circle"></i> Active
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="recent-employee">
+                                    <div class="recent-avatar">RS</div>
+                                    <div class="recent-employee-info">
+                                        <strong>Rahul Sharma</strong>
+                                        <span>rahul@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="recent-department">Development</span>
+                            </td>
+                            <td>
+                                <span class="recent-position">Backend Developer</span>
+                            </td>
+                            <td>
+                                <span class="recent-date">1 Aug 2025</span>
+                            </td>
+                            <td>
+                                <span class="recent-status inactive">
+                                    <i class="fa-solid fa-circle"></i> Active
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="recent-employee">
+                                    <div class="recent-avatar">PS</div>
+                                    <div class="recent-employee-info">
+                                        <strong>Priya Singh</strong>
+                                        <span>priya@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="recent-department">HR</span>
+                            </td>
+                            <td>
+                                <span class="recent-position">HR Manager</span>
+                            </td>
+                            <td>
+                                <span class="recent-date">20 Nov 2024</span>
+                            </td>
+                            <td>
+                                <span class="recent-status active">
+                                    <i class="fa-solid fa-circle"></i> Active
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="recent-employee">
+                                    <div class="recent-avatar">AV</div>
+                                    <div class="recent-employee-info">
+                                        <strong>Aman Verma</strong>
+                                        <span>aman@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="recent-department">Marketing</span>
+                            </td>
+                            <td>
+                                <span class="recent-position">Marketing Executive</span>
+                            </td>
+                            <td>
+                                <span class="recent-date">1 Oct 2026</span>
+                            </td>
+                            <td>
+                                <span class="recent-status active">
+                                    <i class="fa-solid fa-circle"></i> Active
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="recent-employee">
+                                    <div class="recent-avatar">NG</div>
+                                    <div class="recent-employee-info">
+                                        <strong>Neha Gupta</strong>
+                                        <span>neha@gmail.com</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <span class="recent-department">Finance</span>
+                            </td>
+                            <td>
+                                <span class="recent-position">Accountant</span>
+                            </td>
+                            <td>
+                                <span class="recent-date">18 March 2024</span>
+                            </td>
+                            <td>
+                                <span class="recent-status inactive">
+                                    <i class="fa-solid fa-circle"></i> Active
+                                </span>
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </section>
@@ -248,16 +420,16 @@
                 <div class="payroll-summary">
                     <div class="payroll-total">
                         <span>Total Monthly Payroll</span>
-                        <strong id="payrollSummary">₹0</strong>
+                        <strong id="payrollSummary">₹7,38,800</strong>
                     </div>
                     <div class="payroll-info">
                         <div>
                             <span>Average Salary</span>
-                            <strong id="averageSalary">₹0</strong>
+                            <strong id="averageSalary">₹73,880</strong>
                         </div>
                         <div>
                             <span>Highest Salary</span>
-                            <strong id="highestSalary">₹0</strong>
+                            <strong id="highestSalary">₹1,45,000</strong>
                         </div>
                     </div>
                 </div>

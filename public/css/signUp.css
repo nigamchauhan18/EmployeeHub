@@ -41,7 +41,7 @@ body {
     overflow: hidden;
 }
 
-/* .signup-brand::before {
+.signup-brand::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -51,7 +51,7 @@ body {
         linear-gradient(90deg, rgba(255, 255, 255, 0.5) 1px, transparent 1px);
     background-size: 35px 35px;
     mask-image: linear-gradient(to bottom, black,transparent 90%);
-} */
+}
 
 .brand-glow {
     position: absolute;
@@ -535,4 +535,354 @@ body {
 .toast-close:hover {
     background-color: rgb(253, 44, 44);;
     color: rgb(252, 220, 220);
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 0;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.signup-page {
+    width: 100%;
+    min-height: 100vh;
+    padding: 30px;
+    margin-top: 0;
+}
+
+.signup-wrapper {
+    width: 100%;
+    max-width: 1050px;
+    min-width: 0;
+    min-height: 650px;
+    grid-template-columns: 46% 54%;
+}
+
+.signup-brand, .signup-section {
+    min-width: 0;
+}
+
+@media screen and (max-width: 1100px) {
+    .signup-page {
+        padding: 25px;
+    }
+
+    .signup-wrapper {
+        max-width: 950px;
+        grid-template-columns: 44% 56%;
+    }
+
+    .signup-brand {
+        padding: 40px 30px;
+    }
+
+    .signup-section {
+        padding: 40px 35px;
+    }
+
+    .brand-content h1 {
+        font-size: 30px;
+    }
+
+    .brand-description {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .signup-page {
+        min-height: 100vh;
+        padding: 25px 18px;
+        margin-top: 0;
+    }
+
+    .signup-wrapper {
+        display: block;
+        width: 100%;
+        max-width: 480px;
+        min-height: auto;
+        margin: 0 auto;
+        border-radius: 18px;
+    }
+
+    .signup-brand {
+        display: none !important;
+    }
+
+    .signup-section {
+        width: 100%;
+        min-height: auto;
+        padding: 35px 30px;
+        background: linear-gradient(
+            135deg,
+            rgb(255, 255, 255),
+            rgb(250, 251, 255)
+        );
+    }
+
+    .signup-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .signup-logo {
+        margin-bottom: 25px;
+    }
+
+    .signup-header {
+        margin-bottom: 22px;
+    }
+
+    .signup-header h2 {
+        font-size: 21px;
+    }
+
+    .signup-header p {
+        font-size: 10px;
+    }
+
+    .signup-group {
+        margin-bottom: 15px;
+    }
+
+    .signup-group label {
+        font-size: 11px;
+    }
+
+    .signup-input input {
+        height: 43px;
+        font-size: 12px;
+    }
+
+    .signup-input > i {
+        font-size: 12px;
+    }
+
+    .password-toggle {
+        font-size: 12px;
+    }
+
+    .signup-group small,
+    #termsError {
+        font-size: 9px;
+    }
+
+    .terms {
+        font-size: 10px;
+    }
+
+    .signup-button {
+        height: 44px;
+        font-size: 12px;
+    }
+
+    .login-text {
+        font-size: 11px;
+    }
+
+    .back-link {
+        font-size: 10px;
+    }
+
+    .security-note {
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .signup-page {
+        padding: 15px 12px;
+    }
+
+    .signup-wrapper {
+        max-width: 100%;
+        border-radius: 15px;
+    }
+
+    .signup-section {
+        padding: 28px 20px;
+    }
+
+    .signup-logo {
+        gap: 9px;
+        margin-bottom: 24px;
+    }
+
+    .logo-box {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0;
+    }
+
+    .signup-logo strong {
+        font-size: 12px;
+    }
+
+    .signup-logo span {
+        font-size: 9px;
+    }
+
+    .signup-header {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .signup-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 12px;
+    }
+
+    .signup-header h2 {
+        font-size: 19px;
+    }
+
+    .signup-header p {
+        font-size: 9px;
+    }
+
+    .signup-group {
+        margin-bottom: 14px;
+    }
+
+    .signup-input input {
+        height: 42px;
+        padding: 0 34px;
+        font-size: 12px;
+    }
+
+    .signup-input > i {
+        left: 11px;
+    }
+
+    .password-toggle {
+        right: 9px;
+    }
+
+    .terms {
+        gap: 6px;
+        font-size: 9px;
+        margin-bottom: 15px;
+    }
+
+    .signup-button {
+        height: 43px;
+        font-size: 11px;
+    }
+
+    .login-text {
+        font-size: 10px;
+        line-height: 1.7;
+    }
+
+    .security-note {
+        font-size: 9px;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+
+    .success-toast {
+        width: calc(100% - 24px);
+        max-width: 350px;
+        right: 12px;
+        bottom: 12px;
+        padding: 11px;
+        gap: 9px;
+    }
+
+    .toast-content strong {
+        font-size: 10px;
+    }
+
+    .toast-content span {
+        font-size: 9px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .signup-page {
+        padding: 10px;
+    }
+
+    .signup-section {
+        padding: 24px 15px;
+    }
+
+    .signup-header {
+        gap: 8px;
+    }
+
+    .signup-header h2 {
+        font-size: 17px;
+    }
+
+    .signup-header p {
+        font-size: 9px;
+    }
+
+    .signup-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    .signup-input input {
+        font-size: 11px;
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+
+    .terms {
+        font-size: 8px;
+    }
+
+    .security-note {
+        font-size: 8px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-height: 750px) {
+    .signup-page {
+        min-height: 100vh;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .signup-wrapper {
+        min-height: auto;
+    }
+
+    .signup-brand {
+        padding-top: 35px;
+        padding-bottom: 35px;
+    }
+
+    .signup-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .brand-content h1 {
+        font-size: 29px;
+        margin-bottom: 14px;
+    }
+
+    .brand-description {
+        margin-bottom: 22px;
+    }
+
+    .brand-features {
+        gap: 12px;
+    }
+
+    .brand-bottom {
+        margin-top: 22px;
+        padding-top: 15px;
+    }
 }
